@@ -1,11 +1,11 @@
-package xyz.return215.ut_java.tugas1.alpro;
+package xyz.return215.ut_java.tugas2.alpro;
 
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
-public class overtime {
+public class Overtime2 {
     Scanner scanner;
-    public overtime(Scanner scanner) {
+    public Overtime2(Scanner scanner) {
         this.scanner = scanner;
 
         // Define variables
@@ -30,6 +30,9 @@ public class overtime {
             gajiGolongan = 6500000;
         } else if (golongan.equals("C")) {
             gajiGolongan = 9500000;
+        } else {
+            System.out.println("Golongan tidak valid.");
+            return;
         }
 
         // Determine gaji lembur
@@ -43,7 +46,7 @@ public class overtime {
             gajiLembur = gajiGolongan * 0.34;
         } else if (jamLembur == 4) {
             gajiLembur = gajiGolongan * 0.36;
-        } else if (jamLembur >= 5) {
+        } else /*if (jamLembur >= 5)*/ {
             gajiLembur = gajiGolongan * 0.38;
         }
 

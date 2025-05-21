@@ -4,9 +4,9 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-public class datatypes {
+public class Datatypes {
     Scanner scanner;
-    public datatypes(Scanner scanner) {
+    public Datatypes(Scanner scanner) {
         this.scanner = scanner;
         int jumlahBaris = 3;
         String kalimatBaru = "Deklarasi tipe data String";

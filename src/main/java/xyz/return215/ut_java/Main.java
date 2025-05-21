@@ -1,7 +1,10 @@
 package xyz.return215.ut_java;
 
-import xyz.return215.ut_java.tugas1.alpro.overtime;
-import xyz.return215.ut_java.tugas1.strukdat.datatypes;
+import xyz.return215.ut_java.tugas1.alpro.Overtime;
+import xyz.return215.ut_java.tugas1.strukdat.Datatypes;
+import xyz.return215.ut_java.tugas2.alpro.Overtime2;
+import xyz.return215.ut_java.tugas2.alpro.Overtime2plus;
+import xyz.return215.ut_java.tugas2.strukdat.Sorting;
 
 import java.util.Scanner;
 
@@ -12,11 +15,17 @@ public class Main {
 
         String[] programs = {
             "1.AP/Overtime",
-            "1.SD/Datatypes"
+            "1.SD/Datatypes",
+            "2.AP/Overtime2",
+            "2.AP/Overtime2plus",
+            "2.SD/Sorting",
         };
         String[] descriptions = {
             "Handles overtime calculations.",
-            "Handles various data types."
+            "Handles various data types.",
+            "Handles overtime calculations.",
+            "Handles overtime calculations (alt implement).",
+            "Demonstrate sorting algorithms.",
         };
 
         System.out.println(
@@ -49,10 +58,19 @@ public class Main {
                     stop = true;
                     break;
                 case 1:
-                    overtime overtimeProgram = new overtime(scanner);
+                    Overtime overtimeProgram = new Overtime(scanner);
                     break;
                 case 2:
-                    datatypes datatypesProgram = new datatypes(scanner);
+                    Datatypes datatypesProgram = new Datatypes(scanner);
+                    break;
+                case 3:
+                    Overtime2 overtime2Program = new Overtime2(scanner);
+                    break;
+                case 4:
+                    Overtime2plus overtime2PlusProgram = new Overtime2plus(scanner);
+                    break;
+                case 5:
+                    Sorting sortingProgram = new Sorting(scanner);
                     break;
                 default:
                     System.out.println("Invalid choice, please try again.");

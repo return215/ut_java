@@ -1,6 +1,10 @@
 package xyz.return215.ut_java.tugas2.strukdat;
 
+import java.util.Arrays;
+
 public class MergeSort {
+    private static final boolean dev = false;
+
     /**
      * Lakukan sorting menggunakan algoritma Merge Sort
      * @param array Array yang ingin disortir
@@ -19,10 +23,21 @@ public class MergeSort {
 
         int mid = left + (right - left) / 2;
 
+        // print array part to be sorted and the parameters
+        if (dev) System.out.println(
+            "Array to sort: " + Arrays.toString(Arrays.copyOfRange(array, left, right + 1)) + "\n" +
+            "Bounds: ("+ left +" "+ mid +" "+ right + ")"
+        );
+
         mergeSort(array, left, mid);
         mergeSort(array, mid+1, right);
 
         merge(array, left, mid, right);
+
+        // print sorted array part
+        if (dev) System.out.println(
+            "Array sorted : " + Arrays.toString(Arrays.copyOfRange(array, left, right + 1))
+        );
     }
 
     private static void merge(int[] array, int left, int mid, int right) {

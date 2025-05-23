@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class Overtime2plus {
     Scanner scanner;
+
     public Overtime2plus(Scanner scanner) {
         this.scanner = scanner;
 

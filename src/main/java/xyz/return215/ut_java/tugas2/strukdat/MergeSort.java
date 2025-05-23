@@ -7,6 +7,7 @@ public class MergeSort {
 
     /**
      * Lakukan sorting menggunakan algoritma Merge Sort
+     *
      * @param array Array yang ingin disortir
      */
     public static void sort(int[] array) {
@@ -26,11 +27,11 @@ public class MergeSort {
         // print array part to be sorted and the parameters
         if (dev) System.out.println(
             "Array to sort: " + Arrays.toString(Arrays.copyOfRange(array, left, right + 1)) + "\n" +
-            "Bounds: ("+ left +" "+ mid +" "+ right + ")"
+                "Bounds: (" + left + " " + mid + " " + right + ")"
         );
 
         mergeSort(array, left, mid);
-        mergeSort(array, mid+1, right);
+        mergeSort(array, mid + 1, right);
 
         merge(array, left, mid, right);
 
@@ -46,13 +47,11 @@ public class MergeSort {
 
         //  System.arraycopy(array, left + 0, leftPart, 0, leftPart.length);
         int leftSize = leftPart.length;
-        for (int i = 0; i < leftSize; i++) {
-            leftPart[i] = array[left+i];
-        }
+        System.arraycopy(array, left + 0, leftPart, 0, leftSize);
 
         int rightSize = rightPart.length;
         for (int i = 0; i < rightSize; i++) {
-            rightPart[i] = array[mid+1+i];
+            rightPart[i] = array[mid + 1 + i];
         }
 
         int leftIndex = 0;
@@ -81,7 +80,5 @@ public class MergeSort {
             rightIndex++;
             currentIndex++;
         }
-
-
     }
 }

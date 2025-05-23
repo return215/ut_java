@@ -13,23 +13,10 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         boolean stop = false;
 
-        String[] programs = {
-            "1.AP/Overtime",
-            "1.SD/Datatypes",
-            "2.AP/Overtime2",
-            "2.AP/Overtime2plus",
-            "2.SD/Sorting",
-        };
-        String[] descriptions = {
-            "Handles overtime calculations.",
-            "Handles various data types.",
-            "Handles overtime calculations.",
-            "Handles overtime calculations (alt implement).",
-            "Demonstrate sorting algorithms.",
-        };
+        String[] programs = {"1.AP/Overtime", "1.SD/Datatypes", "2.AP/Overtime2", "2.AP/Overtime2plus", "2.SD/Sorting",};
+        String[] descriptions = {"Handles overtime calculations.", "Handles various data types.", "Handles overtime calculations.", "Handles overtime calculations (alt implement).", "Demonstrate sorting algorithms.",};
 
-        System.out.println(
-            """
+        System.out.println("""
             Nama : Muhammad Hidayat
             NIM  : 052747132
             Prodi: Sains Data
@@ -37,8 +24,7 @@ public class Main {
             - MSIM4202 Struktur Data, Kelas 65
             - MSIM4203 Algoritma dan Pemrograman, Kelas 42
             - MSIM4206 Basis Data, Kelas 66
-            """
-        );
+            """);
 
         //TIP Start main loop
 

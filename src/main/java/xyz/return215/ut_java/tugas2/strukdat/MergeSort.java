@@ -45,9 +45,10 @@ public class MergeSort {
         int[] leftPart = new int[mid - left + 1];
         int[] rightPart = new int[right - mid];
 
-        //  System.arraycopy(array, left + 0, leftPart, 0, leftPart.length);
         int leftSize = leftPart.length;
-        System.arraycopy(array, left + 0, leftPart, 0, leftSize);
+        for (int i = 0; i < leftSize; i++) {
+            leftPart[i] = array[left + i];
+        }
 
         int rightSize = rightPart.length;
         for (int i = 0; i < rightSize; i++) {
@@ -59,7 +60,7 @@ public class MergeSort {
         int currentIndex = left;
 
         while (leftIndex < leftSize && rightIndex < rightSize) {
-            if (leftPart[leftIndex] < rightPart[rightIndex]) {
+            if (leftPart[leftIndex] > rightPart[rightIndex]) {
                 array[currentIndex] = leftPart[leftIndex];
                 leftIndex++;
             } else {

@@ -21,14 +21,20 @@ public class CountingSort {
             count[num]++;
         }
 
-        // Membentuk array terurut sesuai jumlah kemunculan nilai
-        int currentIndex = 0;
-        for (int value = 0; value < count.length; value++) {
-            int freq = count[value];
-            for (int j = 0; j < freq; j++) {
-                array[currentIndex] = value;
-                currentIndex++;
-            }
+        // Menghitung jumlah kumulatif kemunculan secara mundur
+        for (int i = count.length - 2; i >= 0; i--) {
+            count[i] += count[i + 1];
+        }
+
+        // Buat salinan dari array asli
+        int[] original = array.clone();
+
+        // Membentuk array terurut sesuai kumulatif kemunculan nilai
+        // dari kiri ke kanan
+        for (int i = 0; i < array.length; i++) {
+            int num = original[i];
+            array[count[num] - 1] = num;
+            count[num]--;
         }
     }
 }

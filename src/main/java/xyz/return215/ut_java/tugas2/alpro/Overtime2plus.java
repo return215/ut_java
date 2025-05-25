@@ -18,7 +18,7 @@ public class Overtime2plus {
 
         // Input golongan
         System.out.print("Masukkan golongan (A/B/C): ");
-        golongan = scanner.nextLine().charAt(0);
+        golongan = scanner.nextLine().toUpperCase().charAt(0);
 
         // Input jam lembur
         System.out.print("Masukkan jam lembur: ");

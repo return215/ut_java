@@ -1,0 +1,835 @@
+Nama : Muhammad Hidayat
+NIM  : 052747132
+Prodi: Sains Data
+UPBJJ: Bogor
+- MSIM4202 Struktur Data, Kelas 65
+- MSIM4203 Algoritma dan Pemrograman, Kelas 42
+- MSIM4206 Basis Data, Kelas 66
+
+Select program:
+1: 1.AP/Overtime - Handles overtime calculations.
+2: 1.SD/Datatypes - Handles various data types.
+3: 2.AP/Overtime2 - Handles overtime calculations.
+4: 2.AP/Overtime2plus - Handles overtime calculations (alt implement).
+5: 2.SD/Sorting - Demonstrate sorting algorithms.
+0: Exit
+| -- originalData --- |
+| 5 3 8 3 9 1 4 7 3 6 |
+| 2 5 8 6 7 2 4 1 9 0 |
+| 3 5 7 4 2 6 8 1 9 0 |
+| 4 5 6 3 2 7 8 1 0 9 |
+| 6 3 2 1 5 4 7 8 9 0 |
+| 3 4 5 6 7 8 9 1 2 0 |
+| 5 3 7 2 4 6 1 8 0 9 |
+| 2 4 6 8 0 1 3 5 7 9 |
+| 6 2 4 8 1 3 5 7 9 0 |
+| 5 3 1 7 2 4 6 0 9 8 |
+
+Arrays.sort Performance:
+Time: 9912328 nanoseconds
+Memory: 587224 bytes
+
+MergeSort Performance:
+Time: 1514471 nanoseconds
+Memory: 83904 bytes
+
+CountingSort Performance:
+Time: 1323639 nanoseconds
+Memory: 22968 bytes
+| --- sortedData ---- | -- mergeSortData -- | countingSortData -- |
+| 9 9 9 9 9 9 9 9 9 9 | 9 9 9 9 9 9 9 9 9 9 | 9 9 9 9 9 9 9 9 9 9 |
+| 8 8 8 8 8 8 8 8 8 8 | 8 8 8 8 8 8 8 8 8 8 | 8 8 8 8 8 8 8 8 8 8 |
+| 7 7 7 7 7 7 7 7 7 7 | 7 7 7 7 7 7 7 7 7 7 | 7 7 7 7 7 7 7 7 7 7 |
+| 6 6 6 6 6 6 6 6 6 6 | 6 6 6 6 6 6 6 6 6 6 | 6 6 6 6 6 6 6 6 6 6 |
+| 5 5 5 5 5 5 5 5 5 5 | 5 5 5 5 5 5 5 5 5 5 | 5 5 5 5 5 5 5 5 5 5 |
+| 4 4 4 4 4 4 4 4 4 4 | 4 4 4 4 4 4 4 4 4 4 | 4 4 4 4 4 4 4 4 4 4 |
+| 3 3 3 3 3 3 3 3 3 3 | 3 3 3 3 3 3 3 3 3 3 | 3 3 3 3 3 3 3 3 3 3 |
+| 3 2 2 2 2 2 2 2 2 2 | 3 2 2 2 2 2 2 2 2 2 | 3 2 2 2 2 2 2 2 2 2 |
+| 2 1 1 1 1 1 1 1 1 1 | 2 1 1 1 1 1 1 1 1 1 | 2 1 1 1 1 1 1 1 1 1 |
+| 1 0 0 0 0 0 0 0 0 0 | 1 0 0 0 0 0 0 0 0 0 | 1 0 0 0 0 0 0 0 0 0 |
+Select program:
+1: 1.AP/Overtime - Handles overtime calculations.
+2: 1.SD/Datatypes - Handles various data types.
+3: 2.AP/Overtime2 - Handles overtime calculations.
+4: 2.AP/Overtime2plus - Handles overtime calculations (alt implement).
+5: 2.SD/Sorting - Demonstrate sorting algorithms.
+0: Exit
+| -- originalData --- |
+| 5 3 8 3 9 1 4 7 3 6 |
+| 2 5 8 6 7 2 4 1 9 0 |
+| 3 5 7 4 2 6 8 1 9 0 |
+| 4 5 6 3 2 7 8 1 0 9 |
+| 6 3 2 1 5 4 7 8 9 0 |
+| 3 4 5 6 7 8 9 1 2 0 |
+| 5 3 7 2 4 6 1 8 0 9 |
+| 2 4 6 8 0 1 3 5 7 9 |
+| 6 2 4 8 1 3 5 7 9 0 |
+| 5 3 1 7 2 4 6 0 9 8 |
+
+Arrays.sort Performance:
+Time: 294229 nanoseconds
+Memory: 15336 bytes
+
+MergeSort Performance:
+Time: 134042 nanoseconds
+Memory: 10064 bytes
+
+CountingSort Performance:
+Time: 30629 nanoseconds
+Memory: 6584 bytes
+| --- sortedData ---- | -- mergeSortData -- | countingSortData -- |
+| 9 9 9 9 9 9 9 9 9 9 | 9 9 9 9 9 9 9 9 9 9 | 9 9 9 9 9 9 9 9 9 9 |
+| 8 8 8 8 8 8 8 8 8 8 | 8 8 8 8 8 8 8 8 8 8 | 8 8 8 8 8 8 8 8 8 8 |
+| 7 7 7 7 7 7 7 7 7 7 | 7 7 7 7 7 7 7 7 7 7 | 7 7 7 7 7 7 7 7 7 7 |
+| 6 6 6 6 6 6 6 6 6 6 | 6 6 6 6 6 6 6 6 6 6 | 6 6 6 6 6 6 6 6 6 6 |
+| 5 5 5 5 5 5 5 5 5 5 | 5 5 5 5 5 5 5 5 5 5 | 5 5 5 5 5 5 5 5 5 5 |
+| 4 4 4 4 4 4 4 4 4 4 | 4 4 4 4 4 4 4 4 4 4 | 4 4 4 4 4 4 4 4 4 4 |
+| 3 3 3 3 3 3 3 3 3 3 | 3 3 3 3 3 3 3 3 3 3 | 3 3 3 3 3 3 3 3 3 3 |
+| 3 2 2 2 2 2 2 2 2 2 | 3 2 2 2 2 2 2 2 2 2 | 3 2 2 2 2 2 2 2 2 2 |
+| 2 1 1 1 1 1 1 1 1 1 | 2 1 1 1 1 1 1 1 1 1 | 2 1 1 1 1 1 1 1 1 1 |
+| 1 0 0 0 0 0 0 0 0 0 | 1 0 0 0 0 0 0 0 0 0 | 1 0 0 0 0 0 0 0 0 0 |
+Select program:
+1: 1.AP/Overtime - Handles overtime calculations.
+2: 1.SD/Datatypes - Handles various data types.
+3: 2.AP/Overtime2 - Handles overtime calculations.
+4: 2.AP/Overtime2plus - Handles overtime calculations (alt implement).
+5: 2.SD/Sorting - Demonstrate sorting algorithms.
+0: Exit
+| -- originalData --- |
+| 5 3 8 3 9 1 4 7 3 6 |
+| 2 5 8 6 7 2 4 1 9 0 |
+| 3 5 7 4 2 6 8 1 9 0 |
+| 4 5 6 3 2 7 8 1 0 9 |
+| 6 3 2 1 5 4 7 8 9 0 |
+| 3 4 5 6 7 8 9 1 2 0 |
+| 5 3 7 2 4 6 1 8 0 9 |
+| 2 4 6 8 0 1 3 5 7 9 |
+| 6 2 4 8 1 3 5 7 9 0 |
+| 5 3 1 7 2 4 6 0 9 8 |
+
+Arrays.sort Performance:
+Time: 350405 nanoseconds
+Memory: 4648 bytes
+
+MergeSort Performance:
+Time: 165247 nanoseconds
+Memory: 9128 bytes
+
+CountingSort Performance:
+Time: 30681 nanoseconds
+Memory: 2680 bytes
+| --- sortedData ---- | -- mergeSortData -- | countingSortData -- |
+| 9 9 9 9 9 9 9 9 9 9 | 9 9 9 9 9 9 9 9 9 9 | 9 9 9 9 9 9 9 9 9 9 |
+| 8 8 8 8 8 8 8 8 8 8 | 8 8 8 8 8 8 8 8 8 8 | 8 8 8 8 8 8 8 8 8 8 |
+| 7 7 7 7 7 7 7 7 7 7 | 7 7 7 7 7 7 7 7 7 7 | 7 7 7 7 7 7 7 7 7 7 |
+| 6 6 6 6 6 6 6 6 6 6 | 6 6 6 6 6 6 6 6 6 6 | 6 6 6 6 6 6 6 6 6 6 |
+| 5 5 5 5 5 5 5 5 5 5 | 5 5 5 5 5 5 5 5 5 5 | 5 5 5 5 5 5 5 5 5 5 |
+| 4 4 4 4 4 4 4 4 4 4 | 4 4 4 4 4 4 4 4 4 4 | 4 4 4 4 4 4 4 4 4 4 |
+| 3 3 3 3 3 3 3 3 3 3 | 3 3 3 3 3 3 3 3 3 3 | 3 3 3 3 3 3 3 3 3 3 |
+| 3 2 2 2 2 2 2 2 2 2 | 3 2 2 2 2 2 2 2 2 2 | 3 2 2 2 2 2 2 2 2 2 |
+| 2 1 1 1 1 1 1 1 1 1 | 2 1 1 1 1 1 1 1 1 1 | 2 1 1 1 1 1 1 1 1 1 |
+| 1 0 0 0 0 0 0 0 0 0 | 1 0 0 0 0 0 0 0 0 0 | 1 0 0 0 0 0 0 0 0 0 |
+Select program:
+1: 1.AP/Overtime - Handles overtime calculations.
+2: 1.SD/Datatypes - Handles various data types.
+3: 2.AP/Overtime2 - Handles overtime calculations.
+4: 2.AP/Overtime2plus - Handles overtime calculations (alt implement).
+5: 2.SD/Sorting - Demonstrate sorting algorithms.
+0: Exit
+| -- originalData --- |
+| 5 3 8 3 9 1 4 7 3 6 |
+| 2 5 8 6 7 2 4 1 9 0 |
+| 3 5 7 4 2 6 8 1 9 0 |
+| 4 5 6 3 2 7 8 1 0 9 |
+| 6 3 2 1 5 4 7 8 9 0 |
+| 3 4 5 6 7 8 9 1 2 0 |
+| 5 3 7 2 4 6 1 8 0 9 |
+| 2 4 6 8 0 1 3 5 7 9 |
+| 6 2 4 8 1 3 5 7 9 0 |
+| 5 3 1 7 2 4 6 0 9 8 |
+
+Arrays.sort Performance:
+Time: 70885 nanoseconds
+Memory: 2648 bytes
+
+MergeSort Performance:
+Time: 596252 nanoseconds
+Memory: 10792 bytes
+
+CountingSort Performance:
+Time: 108973 nanoseconds
+Memory: 2680 bytes
+| --- sortedData ---- | -- mergeSortData -- | countingSortData -- |
+| 9 9 9 9 9 9 9 9 9 9 | 9 9 9 9 9 9 9 9 9 9 | 9 9 9 9 9 9 9 9 9 9 |
+| 8 8 8 8 8 8 8 8 8 8 | 8 8 8 8 8 8 8 8 8 8 | 8 8 8 8 8 8 8 8 8 8 |
+| 7 7 7 7 7 7 7 7 7 7 | 7 7 7 7 7 7 7 7 7 7 | 7 7 7 7 7 7 7 7 7 7 |
+| 6 6 6 6 6 6 6 6 6 6 | 6 6 6 6 6 6 6 6 6 6 | 6 6 6 6 6 6 6 6 6 6 |
+| 5 5 5 5 5 5 5 5 5 5 | 5 5 5 5 5 5 5 5 5 5 | 5 5 5 5 5 5 5 5 5 5 |
+| 4 4 4 4 4 4 4 4 4 4 | 4 4 4 4 4 4 4 4 4 4 | 4 4 4 4 4 4 4 4 4 4 |
+| 3 3 3 3 3 3 3 3 3 3 | 3 3 3 3 3 3 3 3 3 3 | 3 3 3 3 3 3 3 3 3 3 |
+| 3 2 2 2 2 2 2 2 2 2 | 3 2 2 2 2 2 2 2 2 2 | 3 2 2 2 2 2 2 2 2 2 |
+| 2 1 1 1 1 1 1 1 1 1 | 2 1 1 1 1 1 1 1 1 1 | 2 1 1 1 1 1 1 1 1 1 |
+| 1 0 0 0 0 0 0 0 0 0 | 1 0 0 0 0 0 0 0 0 0 | 1 0 0 0 0 0 0 0 0 0 |
+Select program:
+1: 1.AP/Overtime - Handles overtime calculations.
+2: 1.SD/Datatypes - Handles various data types.
+3: 2.AP/Overtime2 - Handles overtime calculations.
+4: 2.AP/Overtime2plus - Handles overtime calculations (alt implement).
+5: 2.SD/Sorting - Demonstrate sorting algorithms.
+0: Exit
+| -- originalData --- |
+| 5 3 8 3 9 1 4 7 3 6 |
+| 2 5 8 6 7 2 4 1 9 0 |
+| 3 5 7 4 2 6 8 1 9 0 |
+| 4 5 6 3 2 7 8 1 0 9 |
+| 6 3 2 1 5 4 7 8 9 0 |
+| 3 4 5 6 7 8 9 1 2 0 |
+| 5 3 7 2 4 6 1 8 0 9 |
+| 2 4 6 8 0 1 3 5 7 9 |
+| 6 2 4 8 1 3 5 7 9 0 |
+| 5 3 1 7 2 4 6 0 9 8 |
+
+Arrays.sort Performance:
+Time: 212405 nanoseconds
+Memory: 2648 bytes
+
+MergeSort Performance:
+Time: 71925 nanoseconds
+Memory: 10792 bytes
+
+CountingSort Performance:
+Time: 104164 nanoseconds
+Memory: 2680 bytes
+| --- sortedData ---- | -- mergeSortData -- | countingSortData -- |
+| 9 9 9 9 9 9 9 9 9 9 | 9 9 9 9 9 9 9 9 9 9 | 9 9 9 9 9 9 9 9 9 9 |
+| 8 8 8 8 8 8 8 8 8 8 | 8 8 8 8 8 8 8 8 8 8 | 8 8 8 8 8 8 8 8 8 8 |
+| 7 7 7 7 7 7 7 7 7 7 | 7 7 7 7 7 7 7 7 7 7 | 7 7 7 7 7 7 7 7 7 7 |
+| 6 6 6 6 6 6 6 6 6 6 | 6 6 6 6 6 6 6 6 6 6 | 6 6 6 6 6 6 6 6 6 6 |
+| 5 5 5 5 5 5 5 5 5 5 | 5 5 5 5 5 5 5 5 5 5 | 5 5 5 5 5 5 5 5 5 5 |
+| 4 4 4 4 4 4 4 4 4 4 | 4 4 4 4 4 4 4 4 4 4 | 4 4 4 4 4 4 4 4 4 4 |
+| 3 3 3 3 3 3 3 3 3 3 | 3 3 3 3 3 3 3 3 3 3 | 3 3 3 3 3 3 3 3 3 3 |
+| 3 2 2 2 2 2 2 2 2 2 | 3 2 2 2 2 2 2 2 2 2 | 3 2 2 2 2 2 2 2 2 2 |
+| 2 1 1 1 1 1 1 1 1 1 | 2 1 1 1 1 1 1 1 1 1 | 2 1 1 1 1 1 1 1 1 1 |
+| 1 0 0 0 0 0 0 0 0 0 | 1 0 0 0 0 0 0 0 0 0 | 1 0 0 0 0 0 0 0 0 0 |
+Select program:
+1: 1.AP/Overtime - Handles overtime calculations.
+2: 1.SD/Datatypes - Handles various data types.
+3: 2.AP/Overtime2 - Handles overtime calculations.
+4: 2.AP/Overtime2plus - Handles overtime calculations (alt implement).
+5: 2.SD/Sorting - Demonstrate sorting algorithms.
+0: Exit
+| -- originalData --- |
+| 5 3 8 3 9 1 4 7 3 6 |
+| 2 5 8 6 7 2 4 1 9 0 |
+| 3 5 7 4 2 6 8 1 9 0 |
+| 4 5 6 3 2 7 8 1 0 9 |
+| 6 3 2 1 5 4 7 8 9 0 |
+| 3 4 5 6 7 8 9 1 2 0 |
+| 5 3 7 2 4 6 1 8 0 9 |
+| 2 4 6 8 0 1 3 5 7 9 |
+| 6 2 4 8 1 3 5 7 9 0 |
+| 5 3 1 7 2 4 6 0 9 8 |
+
+Arrays.sort Performance:
+Time: 298746 nanoseconds
+Memory: 2648 bytes
+
+MergeSort Performance:
+Time: 48634 nanoseconds
+Memory: 10792 bytes
+
+CountingSort Performance:
+Time: 104033 nanoseconds
+Memory: 2680 bytes
+| --- sortedData ---- | -- mergeSortData -- | countingSortData -- |
+| 9 9 9 9 9 9 9 9 9 9 | 9 9 9 9 9 9 9 9 9 9 | 9 9 9 9 9 9 9 9 9 9 |
+| 8 8 8 8 8 8 8 8 8 8 | 8 8 8 8 8 8 8 8 8 8 | 8 8 8 8 8 8 8 8 8 8 |
+| 7 7 7 7 7 7 7 7 7 7 | 7 7 7 7 7 7 7 7 7 7 | 7 7 7 7 7 7 7 7 7 7 |
+| 6 6 6 6 6 6 6 6 6 6 | 6 6 6 6 6 6 6 6 6 6 | 6 6 6 6 6 6 6 6 6 6 |
+| 5 5 5 5 5 5 5 5 5 5 | 5 5 5 5 5 5 5 5 5 5 | 5 5 5 5 5 5 5 5 5 5 |
+| 4 4 4 4 4 4 4 4 4 4 | 4 4 4 4 4 4 4 4 4 4 | 4 4 4 4 4 4 4 4 4 4 |
+| 3 3 3 3 3 3 3 3 3 3 | 3 3 3 3 3 3 3 3 3 3 | 3 3 3 3 3 3 3 3 3 3 |
+| 3 2 2 2 2 2 2 2 2 2 | 3 2 2 2 2 2 2 2 2 2 | 3 2 2 2 2 2 2 2 2 2 |
+| 2 1 1 1 1 1 1 1 1 1 | 2 1 1 1 1 1 1 1 1 1 | 2 1 1 1 1 1 1 1 1 1 |
+| 1 0 0 0 0 0 0 0 0 0 | 1 0 0 0 0 0 0 0 0 0 | 1 0 0 0 0 0 0 0 0 0 |
+Select program:
+1: 1.AP/Overtime - Handles overtime calculations.
+2: 1.SD/Datatypes - Handles various data types.
+3: 2.AP/Overtime2 - Handles overtime calculations.
+4: 2.AP/Overtime2plus - Handles overtime calculations (alt implement).
+5: 2.SD/Sorting - Demonstrate sorting algorithms.
+0: Exit
+| -- originalData --- |
+| 5 3 8 3 9 1 4 7 3 6 |
+| 2 5 8 6 7 2 4 1 9 0 |
+| 3 5 7 4 2 6 8 1 9 0 |
+| 4 5 6 3 2 7 8 1 0 9 |
+| 6 3 2 1 5 4 7 8 9 0 |
+| 3 4 5 6 7 8 9 1 2 0 |
+| 5 3 7 2 4 6 1 8 0 9 |
+| 2 4 6 8 0 1 3 5 7 9 |
+| 6 2 4 8 1 3 5 7 9 0 |
+| 5 3 1 7 2 4 6 0 9 8 |
+
+Arrays.sort Performance:
+Time: 224776 nanoseconds
+Memory: 2648 bytes
+
+MergeSort Performance:
+Time: 33839 nanoseconds
+Memory: 10792 bytes
+
+CountingSort Performance:
+Time: 100226 nanoseconds
+Memory: 2680 bytes
+| --- sortedData ---- | -- mergeSortData -- | countingSortData -- |
+| 9 9 9 9 9 9 9 9 9 9 | 9 9 9 9 9 9 9 9 9 9 | 9 9 9 9 9 9 9 9 9 9 |
+| 8 8 8 8 8 8 8 8 8 8 | 8 8 8 8 8 8 8 8 8 8 | 8 8 8 8 8 8 8 8 8 8 |
+| 7 7 7 7 7 7 7 7 7 7 | 7 7 7 7 7 7 7 7 7 7 | 7 7 7 7 7 7 7 7 7 7 |
+| 6 6 6 6 6 6 6 6 6 6 | 6 6 6 6 6 6 6 6 6 6 | 6 6 6 6 6 6 6 6 6 6 |
+| 5 5 5 5 5 5 5 5 5 5 | 5 5 5 5 5 5 5 5 5 5 | 5 5 5 5 5 5 5 5 5 5 |
+| 4 4 4 4 4 4 4 4 4 4 | 4 4 4 4 4 4 4 4 4 4 | 4 4 4 4 4 4 4 4 4 4 |
+| 3 3 3 3 3 3 3 3 3 3 | 3 3 3 3 3 3 3 3 3 3 | 3 3 3 3 3 3 3 3 3 3 |
+| 3 2 2 2 2 2 2 2 2 2 | 3 2 2 2 2 2 2 2 2 2 | 3 2 2 2 2 2 2 2 2 2 |
+| 2 1 1 1 1 1 1 1 1 1 | 2 1 1 1 1 1 1 1 1 1 | 2 1 1 1 1 1 1 1 1 1 |
+| 1 0 0 0 0 0 0 0 0 0 | 1 0 0 0 0 0 0 0 0 0 | 1 0 0 0 0 0 0 0 0 0 |
+Select program:
+1: 1.AP/Overtime - Handles overtime calculations.
+2: 1.SD/Datatypes - Handles various data types.
+3: 2.AP/Overtime2 - Handles overtime calculations.
+4: 2.AP/Overtime2plus - Handles overtime calculations (alt implement).
+5: 2.SD/Sorting - Demonstrate sorting algorithms.
+0: Exit
+| -- originalData --- |
+| 5 3 8 3 9 1 4 7 3 6 |
+| 2 5 8 6 7 2 4 1 9 0 |
+| 3 5 7 4 2 6 8 1 9 0 |
+| 4 5 6 3 2 7 8 1 0 9 |
+| 6 3 2 1 5 4 7 8 9 0 |
+| 3 4 5 6 7 8 9 1 2 0 |
+| 5 3 7 2 4 6 1 8 0 9 |
+| 2 4 6 8 0 1 3 5 7 9 |
+| 6 2 4 8 1 3 5 7 9 0 |
+| 5 3 1 7 2 4 6 0 9 8 |
+
+Arrays.sort Performance:
+Time: 214648 nanoseconds
+Memory: 2648 bytes
+
+MergeSort Performance:
+Time: 51792 nanoseconds
+Memory: 10792 bytes
+
+CountingSort Performance:
+Time: 44909 nanoseconds
+Memory: 2680 bytes
+| --- sortedData ---- | -- mergeSortData -- | countingSortData -- |
+| 9 9 9 9 9 9 9 9 9 9 | 9 9 9 9 9 9 9 9 9 9 | 9 9 9 9 9 9 9 9 9 9 |
+| 8 8 8 8 8 8 8 8 8 8 | 8 8 8 8 8 8 8 8 8 8 | 8 8 8 8 8 8 8 8 8 8 |
+| 7 7 7 7 7 7 7 7 7 7 | 7 7 7 7 7 7 7 7 7 7 | 7 7 7 7 7 7 7 7 7 7 |
+| 6 6 6 6 6 6 6 6 6 6 | 6 6 6 6 6 6 6 6 6 6 | 6 6 6 6 6 6 6 6 6 6 |
+| 5 5 5 5 5 5 5 5 5 5 | 5 5 5 5 5 5 5 5 5 5 | 5 5 5 5 5 5 5 5 5 5 |
+| 4 4 4 4 4 4 4 4 4 4 | 4 4 4 4 4 4 4 4 4 4 | 4 4 4 4 4 4 4 4 4 4 |
+| 3 3 3 3 3 3 3 3 3 3 | 3 3 3 3 3 3 3 3 3 3 | 3 3 3 3 3 3 3 3 3 3 |
+| 3 2 2 2 2 2 2 2 2 2 | 3 2 2 2 2 2 2 2 2 2 | 3 2 2 2 2 2 2 2 2 2 |
+| 2 1 1 1 1 1 1 1 1 1 | 2 1 1 1 1 1 1 1 1 1 | 2 1 1 1 1 1 1 1 1 1 |
+| 1 0 0 0 0 0 0 0 0 0 | 1 0 0 0 0 0 0 0 0 0 | 1 0 0 0 0 0 0 0 0 0 |
+Select program:
+1: 1.AP/Overtime - Handles overtime calculations.
+2: 1.SD/Datatypes - Handles various data types.
+3: 2.AP/Overtime2 - Handles overtime calculations.
+4: 2.AP/Overtime2plus - Handles overtime calculations (alt implement).
+5: 2.SD/Sorting - Demonstrate sorting algorithms.
+0: Exit
+| -- originalData --- |
+| 5 3 8 3 9 1 4 7 3 6 |
+| 2 5 8 6 7 2 4 1 9 0 |
+| 3 5 7 4 2 6 8 1 9 0 |
+| 4 5 6 3 2 7 8 1 0 9 |
+| 6 3 2 1 5 4 7 8 9 0 |
+| 3 4 5 6 7 8 9 1 2 0 |
+| 5 3 7 2 4 6 1 8 0 9 |
+| 2 4 6 8 0 1 3 5 7 9 |
+| 6 2 4 8 1 3 5 7 9 0 |
+| 5 3 1 7 2 4 6 0 9 8 |
+
+Arrays.sort Performance:
+Time: 63537 nanoseconds
+Memory: 2648 bytes
+
+MergeSort Performance:
+Time: 32642 nanoseconds
+Memory: 10792 bytes
+
+CountingSort Performance:
+Time: 30158 nanoseconds
+Memory: 2680 bytes
+| --- sortedData ---- | -- mergeSortData -- | countingSortData -- |
+| 9 9 9 9 9 9 9 9 9 9 | 9 9 9 9 9 9 9 9 9 9 | 9 9 9 9 9 9 9 9 9 9 |
+| 8 8 8 8 8 8 8 8 8 8 | 8 8 8 8 8 8 8 8 8 8 | 8 8 8 8 8 8 8 8 8 8 |
+| 7 7 7 7 7 7 7 7 7 7 | 7 7 7 7 7 7 7 7 7 7 | 7 7 7 7 7 7 7 7 7 7 |
+| 6 6 6 6 6 6 6 6 6 6 | 6 6 6 6 6 6 6 6 6 6 | 6 6 6 6 6 6 6 6 6 6 |
+| 5 5 5 5 5 5 5 5 5 5 | 5 5 5 5 5 5 5 5 5 5 | 5 5 5 5 5 5 5 5 5 5 |
+| 4 4 4 4 4 4 4 4 4 4 | 4 4 4 4 4 4 4 4 4 4 | 4 4 4 4 4 4 4 4 4 4 |
+| 3 3 3 3 3 3 3 3 3 3 | 3 3 3 3 3 3 3 3 3 3 | 3 3 3 3 3 3 3 3 3 3 |
+| 3 2 2 2 2 2 2 2 2 2 | 3 2 2 2 2 2 2 2 2 2 | 3 2 2 2 2 2 2 2 2 2 |
+| 2 1 1 1 1 1 1 1 1 1 | 2 1 1 1 1 1 1 1 1 1 | 2 1 1 1 1 1 1 1 1 1 |
+| 1 0 0 0 0 0 0 0 0 0 | 1 0 0 0 0 0 0 0 0 0 | 1 0 0 0 0 0 0 0 0 0 |
+Select program:
+1: 1.AP/Overtime - Handles overtime calculations.
+2: 1.SD/Datatypes - Handles various data types.
+3: 2.AP/Overtime2 - Handles overtime calculations.
+4: 2.AP/Overtime2plus - Handles overtime calculations (alt implement).
+5: 2.SD/Sorting - Demonstrate sorting algorithms.
+0: Exit
+| -- originalData --- |
+| 5 3 8 3 9 1 4 7 3 6 |
+| 2 5 8 6 7 2 4 1 9 0 |
+| 3 5 7 4 2 6 8 1 9 0 |
+| 4 5 6 3 2 7 8 1 0 9 |
+| 6 3 2 1 5 4 7 8 9 0 |
+| 3 4 5 6 7 8 9 1 2 0 |
+| 5 3 7 2 4 6 1 8 0 9 |
+| 2 4 6 8 0 1 3 5 7 9 |
+| 6 2 4 8 1 3 5 7 9 0 |
+| 5 3 1 7 2 4 6 0 9 8 |
+
+Arrays.sort Performance:
+Time: 117348 nanoseconds
+Memory: 2648 bytes
+
+MergeSort Performance:
+Time: 59139 nanoseconds
+Memory: 10792 bytes
+
+CountingSort Performance:
+Time: 46064 nanoseconds
+Memory: 2680 bytes
+| --- sortedData ---- | -- mergeSortData -- | countingSortData -- |
+| 9 9 9 9 9 9 9 9 9 9 | 9 9 9 9 9 9 9 9 9 9 | 9 9 9 9 9 9 9 9 9 9 |
+| 8 8 8 8 8 8 8 8 8 8 | 8 8 8 8 8 8 8 8 8 8 | 8 8 8 8 8 8 8 8 8 8 |
+| 7 7 7 7 7 7 7 7 7 7 | 7 7 7 7 7 7 7 7 7 7 | 7 7 7 7 7 7 7 7 7 7 |
+| 6 6 6 6 6 6 6 6 6 6 | 6 6 6 6 6 6 6 6 6 6 | 6 6 6 6 6 6 6 6 6 6 |
+| 5 5 5 5 5 5 5 5 5 5 | 5 5 5 5 5 5 5 5 5 5 | 5 5 5 5 5 5 5 5 5 5 |
+| 4 4 4 4 4 4 4 4 4 4 | 4 4 4 4 4 4 4 4 4 4 | 4 4 4 4 4 4 4 4 4 4 |
+| 3 3 3 3 3 3 3 3 3 3 | 3 3 3 3 3 3 3 3 3 3 | 3 3 3 3 3 3 3 3 3 3 |
+| 3 2 2 2 2 2 2 2 2 2 | 3 2 2 2 2 2 2 2 2 2 | 3 2 2 2 2 2 2 2 2 2 |
+| 2 1 1 1 1 1 1 1 1 1 | 2 1 1 1 1 1 1 1 1 1 | 2 1 1 1 1 1 1 1 1 1 |
+| 1 0 0 0 0 0 0 0 0 0 | 1 0 0 0 0 0 0 0 0 0 | 1 0 0 0 0 0 0 0 0 0 |
+Select program:
+1: 1.AP/Overtime - Handles overtime calculations.
+2: 1.SD/Datatypes - Handles various data types.
+3: 2.AP/Overtime2 - Handles overtime calculations.
+4: 2.AP/Overtime2plus - Handles overtime calculations (alt implement).
+5: 2.SD/Sorting - Demonstrate sorting algorithms.
+0: Exit
+| -- originalData --- |
+| 5 3 8 3 9 1 4 7 3 6 |
+| 2 5 8 6 7 2 4 1 9 0 |
+| 3 5 7 4 2 6 8 1 9 0 |
+| 4 5 6 3 2 7 8 1 0 9 |
+| 6 3 2 1 5 4 7 8 9 0 |
+| 3 4 5 6 7 8 9 1 2 0 |
+| 5 3 7 2 4 6 1 8 0 9 |
+| 2 4 6 8 0 1 3 5 7 9 |
+| 6 2 4 8 1 3 5 7 9 0 |
+| 5 3 1 7 2 4 6 0 9 8 |
+
+Arrays.sort Performance:
+Time: 184840 nanoseconds
+Memory: 2648 bytes
+
+MergeSort Performance:
+Time: 182019 nanoseconds
+Memory: 10792 bytes
+
+CountingSort Performance:
+Time: 31673 nanoseconds
+Memory: 2680 bytes
+| --- sortedData ---- | -- mergeSortData -- | countingSortData -- |
+| 9 9 9 9 9 9 9 9 9 9 | 9 9 9 9 9 9 9 9 9 9 | 9 9 9 9 9 9 9 9 9 9 |
+| 8 8 8 8 8 8 8 8 8 8 | 8 8 8 8 8 8 8 8 8 8 | 8 8 8 8 8 8 8 8 8 8 |
+| 7 7 7 7 7 7 7 7 7 7 | 7 7 7 7 7 7 7 7 7 7 | 7 7 7 7 7 7 7 7 7 7 |
+| 6 6 6 6 6 6 6 6 6 6 | 6 6 6 6 6 6 6 6 6 6 | 6 6 6 6 6 6 6 6 6 6 |
+| 5 5 5 5 5 5 5 5 5 5 | 5 5 5 5 5 5 5 5 5 5 | 5 5 5 5 5 5 5 5 5 5 |
+| 4 4 4 4 4 4 4 4 4 4 | 4 4 4 4 4 4 4 4 4 4 | 4 4 4 4 4 4 4 4 4 4 |
+| 3 3 3 3 3 3 3 3 3 3 | 3 3 3 3 3 3 3 3 3 3 | 3 3 3 3 3 3 3 3 3 3 |
+| 3 2 2 2 2 2 2 2 2 2 | 3 2 2 2 2 2 2 2 2 2 | 3 2 2 2 2 2 2 2 2 2 |
+| 2 1 1 1 1 1 1 1 1 1 | 2 1 1 1 1 1 1 1 1 1 | 2 1 1 1 1 1 1 1 1 1 |
+| 1 0 0 0 0 0 0 0 0 0 | 1 0 0 0 0 0 0 0 0 0 | 1 0 0 0 0 0 0 0 0 0 |
+Select program:
+1: 1.AP/Overtime - Handles overtime calculations.
+2: 1.SD/Datatypes - Handles various data types.
+3: 2.AP/Overtime2 - Handles overtime calculations.
+4: 2.AP/Overtime2plus - Handles overtime calculations (alt implement).
+5: 2.SD/Sorting - Demonstrate sorting algorithms.
+0: Exit
+| -- originalData --- |
+| 5 3 8 3 9 1 4 7 3 6 |
+| 2 5 8 6 7 2 4 1 9 0 |
+| 3 5 7 4 2 6 8 1 9 0 |
+| 4 5 6 3 2 7 8 1 0 9 |
+| 6 3 2 1 5 4 7 8 9 0 |
+| 3 4 5 6 7 8 9 1 2 0 |
+| 5 3 7 2 4 6 1 8 0 9 |
+| 2 4 6 8 0 1 3 5 7 9 |
+| 6 2 4 8 1 3 5 7 9 0 |
+| 5 3 1 7 2 4 6 0 9 8 |
+
+Arrays.sort Performance:
+Time: 226702 nanoseconds
+Memory: 2648 bytes
+
+MergeSort Performance:
+Time: 48743 nanoseconds
+Memory: 10792 bytes
+
+CountingSort Performance:
+Time: 32264 nanoseconds
+Memory: 2680 bytes
+| --- sortedData ---- | -- mergeSortData -- | countingSortData -- |
+| 9 9 9 9 9 9 9 9 9 9 | 9 9 9 9 9 9 9 9 9 9 | 9 9 9 9 9 9 9 9 9 9 |
+| 8 8 8 8 8 8 8 8 8 8 | 8 8 8 8 8 8 8 8 8 8 | 8 8 8 8 8 8 8 8 8 8 |
+| 7 7 7 7 7 7 7 7 7 7 | 7 7 7 7 7 7 7 7 7 7 | 7 7 7 7 7 7 7 7 7 7 |
+| 6 6 6 6 6 6 6 6 6 6 | 6 6 6 6 6 6 6 6 6 6 | 6 6 6 6 6 6 6 6 6 6 |
+| 5 5 5 5 5 5 5 5 5 5 | 5 5 5 5 5 5 5 5 5 5 | 5 5 5 5 5 5 5 5 5 5 |
+| 4 4 4 4 4 4 4 4 4 4 | 4 4 4 4 4 4 4 4 4 4 | 4 4 4 4 4 4 4 4 4 4 |
+| 3 3 3 3 3 3 3 3 3 3 | 3 3 3 3 3 3 3 3 3 3 | 3 3 3 3 3 3 3 3 3 3 |
+| 3 2 2 2 2 2 2 2 2 2 | 3 2 2 2 2 2 2 2 2 2 | 3 2 2 2 2 2 2 2 2 2 |
+| 2 1 1 1 1 1 1 1 1 1 | 2 1 1 1 1 1 1 1 1 1 | 2 1 1 1 1 1 1 1 1 1 |
+| 1 0 0 0 0 0 0 0 0 0 | 1 0 0 0 0 0 0 0 0 0 | 1 0 0 0 0 0 0 0 0 0 |
+Select program:
+1: 1.AP/Overtime - Handles overtime calculations.
+2: 1.SD/Datatypes - Handles various data types.
+3: 2.AP/Overtime2 - Handles overtime calculations.
+4: 2.AP/Overtime2plus - Handles overtime calculations (alt implement).
+5: 2.SD/Sorting - Demonstrate sorting algorithms.
+0: Exit
+| -- originalData --- |
+| 5 3 8 3 9 1 4 7 3 6 |
+| 2 5 8 6 7 2 4 1 9 0 |
+| 3 5 7 4 2 6 8 1 9 0 |
+| 4 5 6 3 2 7 8 1 0 9 |
+| 6 3 2 1 5 4 7 8 9 0 |
+| 3 4 5 6 7 8 9 1 2 0 |
+| 5 3 7 2 4 6 1 8 0 9 |
+| 2 4 6 8 0 1 3 5 7 9 |
+| 6 2 4 8 1 3 5 7 9 0 |
+| 5 3 1 7 2 4 6 0 9 8 |
+
+Arrays.sort Performance:
+Time: 75158 nanoseconds
+Memory: 2648 bytes
+
+MergeSort Performance:
+Time: 57621 nanoseconds
+Memory: 10792 bytes
+
+CountingSort Performance:
+Time: 38417 nanoseconds
+Memory: 2680 bytes
+| --- sortedData ---- | -- mergeSortData -- | countingSortData -- |
+| 9 9 9 9 9 9 9 9 9 9 | 9 9 9 9 9 9 9 9 9 9 | 9 9 9 9 9 9 9 9 9 9 |
+| 8 8 8 8 8 8 8 8 8 8 | 8 8 8 8 8 8 8 8 8 8 | 8 8 8 8 8 8 8 8 8 8 |
+| 7 7 7 7 7 7 7 7 7 7 | 7 7 7 7 7 7 7 7 7 7 | 7 7 7 7 7 7 7 7 7 7 |
+| 6 6 6 6 6 6 6 6 6 6 | 6 6 6 6 6 6 6 6 6 6 | 6 6 6 6 6 6 6 6 6 6 |
+| 5 5 5 5 5 5 5 5 5 5 | 5 5 5 5 5 5 5 5 5 5 | 5 5 5 5 5 5 5 5 5 5 |
+| 4 4 4 4 4 4 4 4 4 4 | 4 4 4 4 4 4 4 4 4 4 | 4 4 4 4 4 4 4 4 4 4 |
+| 3 3 3 3 3 3 3 3 3 3 | 3 3 3 3 3 3 3 3 3 3 | 3 3 3 3 3 3 3 3 3 3 |
+| 3 2 2 2 2 2 2 2 2 2 | 3 2 2 2 2 2 2 2 2 2 | 3 2 2 2 2 2 2 2 2 2 |
+| 2 1 1 1 1 1 1 1 1 1 | 2 1 1 1 1 1 1 1 1 1 | 2 1 1 1 1 1 1 1 1 1 |
+| 1 0 0 0 0 0 0 0 0 0 | 1 0 0 0 0 0 0 0 0 0 | 1 0 0 0 0 0 0 0 0 0 |
+Select program:
+1: 1.AP/Overtime - Handles overtime calculations.
+2: 1.SD/Datatypes - Handles various data types.
+3: 2.AP/Overtime2 - Handles overtime calculations.
+4: 2.AP/Overtime2plus - Handles overtime calculations (alt implement).
+5: 2.SD/Sorting - Demonstrate sorting algorithms.
+0: Exit
+| -- originalData --- |
+| 5 3 8 3 9 1 4 7 3 6 |
+| 2 5 8 6 7 2 4 1 9 0 |
+| 3 5 7 4 2 6 8 1 9 0 |
+| 4 5 6 3 2 7 8 1 0 9 |
+| 6 3 2 1 5 4 7 8 9 0 |
+| 3 4 5 6 7 8 9 1 2 0 |
+| 5 3 7 2 4 6 1 8 0 9 |
+| 2 4 6 8 0 1 3 5 7 9 |
+| 6 2 4 8 1 3 5 7 9 0 |
+| 5 3 1 7 2 4 6 0 9 8 |
+
+Arrays.sort Performance:
+Time: 66087 nanoseconds
+Memory: 2648 bytes
+
+MergeSort Performance:
+Time: 51346 nanoseconds
+Memory: 10792 bytes
+
+CountingSort Performance:
+Time: 54322 nanoseconds
+Memory: 2680 bytes
+| --- sortedData ---- | -- mergeSortData -- | countingSortData -- |
+| 9 9 9 9 9 9 9 9 9 9 | 9 9 9 9 9 9 9 9 9 9 | 9 9 9 9 9 9 9 9 9 9 |
+| 8 8 8 8 8 8 8 8 8 8 | 8 8 8 8 8 8 8 8 8 8 | 8 8 8 8 8 8 8 8 8 8 |
+| 7 7 7 7 7 7 7 7 7 7 | 7 7 7 7 7 7 7 7 7 7 | 7 7 7 7 7 7 7 7 7 7 |
+| 6 6 6 6 6 6 6 6 6 6 | 6 6 6 6 6 6 6 6 6 6 | 6 6 6 6 6 6 6 6 6 6 |
+| 5 5 5 5 5 5 5 5 5 5 | 5 5 5 5 5 5 5 5 5 5 | 5 5 5 5 5 5 5 5 5 5 |
+| 4 4 4 4 4 4 4 4 4 4 | 4 4 4 4 4 4 4 4 4 4 | 4 4 4 4 4 4 4 4 4 4 |
+| 3 3 3 3 3 3 3 3 3 3 | 3 3 3 3 3 3 3 3 3 3 | 3 3 3 3 3 3 3 3 3 3 |
+| 3 2 2 2 2 2 2 2 2 2 | 3 2 2 2 2 2 2 2 2 2 | 3 2 2 2 2 2 2 2 2 2 |
+| 2 1 1 1 1 1 1 1 1 1 | 2 1 1 1 1 1 1 1 1 1 | 2 1 1 1 1 1 1 1 1 1 |
+| 1 0 0 0 0 0 0 0 0 0 | 1 0 0 0 0 0 0 0 0 0 | 1 0 0 0 0 0 0 0 0 0 |
+Select program:
+1: 1.AP/Overtime - Handles overtime calculations.
+2: 1.SD/Datatypes - Handles various data types.
+3: 2.AP/Overtime2 - Handles overtime calculations.
+4: 2.AP/Overtime2plus - Handles overtime calculations (alt implement).
+5: 2.SD/Sorting - Demonstrate sorting algorithms.
+0: Exit
+| -- originalData --- |
+| 5 3 8 3 9 1 4 7 3 6 |
+| 2 5 8 6 7 2 4 1 9 0 |
+| 3 5 7 4 2 6 8 1 9 0 |
+| 4 5 6 3 2 7 8 1 0 9 |
+| 6 3 2 1 5 4 7 8 9 0 |
+| 3 4 5 6 7 8 9 1 2 0 |
+| 5 3 7 2 4 6 1 8 0 9 |
+| 2 4 6 8 0 1 3 5 7 9 |
+| 6 2 4 8 1 3 5 7 9 0 |
+| 5 3 1 7 2 4 6 0 9 8 |
+
+Arrays.sort Performance:
+Time: 183321 nanoseconds
+Memory: 2648 bytes
+
+MergeSort Performance:
+Time: 40059 nanoseconds
+Memory: 10792 bytes
+
+CountingSort Performance:
+Time: 42364 nanoseconds
+Memory: 2680 bytes
+| --- sortedData ---- | -- mergeSortData -- | countingSortData -- |
+| 9 9 9 9 9 9 9 9 9 9 | 9 9 9 9 9 9 9 9 9 9 | 9 9 9 9 9 9 9 9 9 9 |
+| 8 8 8 8 8 8 8 8 8 8 | 8 8 8 8 8 8 8 8 8 8 | 8 8 8 8 8 8 8 8 8 8 |
+| 7 7 7 7 7 7 7 7 7 7 | 7 7 7 7 7 7 7 7 7 7 | 7 7 7 7 7 7 7 7 7 7 |
+| 6 6 6 6 6 6 6 6 6 6 | 6 6 6 6 6 6 6 6 6 6 | 6 6 6 6 6 6 6 6 6 6 |
+| 5 5 5 5 5 5 5 5 5 5 | 5 5 5 5 5 5 5 5 5 5 | 5 5 5 5 5 5 5 5 5 5 |
+| 4 4 4 4 4 4 4 4 4 4 | 4 4 4 4 4 4 4 4 4 4 | 4 4 4 4 4 4 4 4 4 4 |
+| 3 3 3 3 3 3 3 3 3 3 | 3 3 3 3 3 3 3 3 3 3 | 3 3 3 3 3 3 3 3 3 3 |
+| 3 2 2 2 2 2 2 2 2 2 | 3 2 2 2 2 2 2 2 2 2 | 3 2 2 2 2 2 2 2 2 2 |
+| 2 1 1 1 1 1 1 1 1 1 | 2 1 1 1 1 1 1 1 1 1 | 2 1 1 1 1 1 1 1 1 1 |
+| 1 0 0 0 0 0 0 0 0 0 | 1 0 0 0 0 0 0 0 0 0 | 1 0 0 0 0 0 0 0 0 0 |
+Select program:
+1: 1.AP/Overtime - Handles overtime calculations.
+2: 1.SD/Datatypes - Handles various data types.
+3: 2.AP/Overtime2 - Handles overtime calculations.
+4: 2.AP/Overtime2plus - Handles overtime calculations (alt implement).
+5: 2.SD/Sorting - Demonstrate sorting algorithms.
+0: Exit
+| -- originalData --- |
+| 5 3 8 3 9 1 4 7 3 6 |
+| 2 5 8 6 7 2 4 1 9 0 |
+| 3 5 7 4 2 6 8 1 9 0 |
+| 4 5 6 3 2 7 8 1 0 9 |
+| 6 3 2 1 5 4 7 8 9 0 |
+| 3 4 5 6 7 8 9 1 2 0 |
+| 5 3 7 2 4 6 1 8 0 9 |
+| 2 4 6 8 0 1 3 5 7 9 |
+| 6 2 4 8 1 3 5 7 9 0 |
+| 5 3 1 7 2 4 6 0 9 8 |
+
+Arrays.sort Performance:
+Time: 81974 nanoseconds
+Memory: 2648 bytes
+
+MergeSort Performance:
+Time: 95506 nanoseconds
+Memory: 10792 bytes
+
+CountingSort Performance:
+Time: 129478 nanoseconds
+Memory: 2680 bytes
+| --- sortedData ---- | -- mergeSortData -- | countingSortData -- |
+| 9 9 9 9 9 9 9 9 9 9 | 9 9 9 9 9 9 9 9 9 9 | 9 9 9 9 9 9 9 9 9 9 |
+| 8 8 8 8 8 8 8 8 8 8 | 8 8 8 8 8 8 8 8 8 8 | 8 8 8 8 8 8 8 8 8 8 |
+| 7 7 7 7 7 7 7 7 7 7 | 7 7 7 7 7 7 7 7 7 7 | 7 7 7 7 7 7 7 7 7 7 |
+| 6 6 6 6 6 6 6 6 6 6 | 6 6 6 6 6 6 6 6 6 6 | 6 6 6 6 6 6 6 6 6 6 |
+| 5 5 5 5 5 5 5 5 5 5 | 5 5 5 5 5 5 5 5 5 5 | 5 5 5 5 5 5 5 5 5 5 |
+| 4 4 4 4 4 4 4 4 4 4 | 4 4 4 4 4 4 4 4 4 4 | 4 4 4 4 4 4 4 4 4 4 |
+| 3 3 3 3 3 3 3 3 3 3 | 3 3 3 3 3 3 3 3 3 3 | 3 3 3 3 3 3 3 3 3 3 |
+| 3 2 2 2 2 2 2 2 2 2 | 3 2 2 2 2 2 2 2 2 2 | 3 2 2 2 2 2 2 2 2 2 |
+| 2 1 1 1 1 1 1 1 1 1 | 2 1 1 1 1 1 1 1 1 1 | 2 1 1 1 1 1 1 1 1 1 |
+| 1 0 0 0 0 0 0 0 0 0 | 1 0 0 0 0 0 0 0 0 0 | 1 0 0 0 0 0 0 0 0 0 |
+Select program:
+1: 1.AP/Overtime - Handles overtime calculations.
+2: 1.SD/Datatypes - Handles various data types.
+3: 2.AP/Overtime2 - Handles overtime calculations.
+4: 2.AP/Overtime2plus - Handles overtime calculations (alt implement).
+5: 2.SD/Sorting - Demonstrate sorting algorithms.
+0: Exit
+| -- originalData --- |
+| 5 3 8 3 9 1 4 7 3 6 |
+| 2 5 8 6 7 2 4 1 9 0 |
+| 3 5 7 4 2 6 8 1 9 0 |
+| 4 5 6 3 2 7 8 1 0 9 |
+| 6 3 2 1 5 4 7 8 9 0 |
+| 3 4 5 6 7 8 9 1 2 0 |
+| 5 3 7 2 4 6 1 8 0 9 |
+| 2 4 6 8 0 1 3 5 7 9 |
+| 6 2 4 8 1 3 5 7 9 0 |
+| 5 3 1 7 2 4 6 0 9 8 |
+
+Arrays.sort Performance:
+Time: 90338 nanoseconds
+Memory: 2648 bytes
+
+MergeSort Performance:
+Time: 49789 nanoseconds
+Memory: 10792 bytes
+
+CountingSort Performance:
+Time: 42858 nanoseconds
+Memory: 2680 bytes
+| --- sortedData ---- | -- mergeSortData -- | countingSortData -- |
+| 9 9 9 9 9 9 9 9 9 9 | 9 9 9 9 9 9 9 9 9 9 | 9 9 9 9 9 9 9 9 9 9 |
+| 8 8 8 8 8 8 8 8 8 8 | 8 8 8 8 8 8 8 8 8 8 | 8 8 8 8 8 8 8 8 8 8 |
+| 7 7 7 7 7 7 7 7 7 7 | 7 7 7 7 7 7 7 7 7 7 | 7 7 7 7 7 7 7 7 7 7 |
+| 6 6 6 6 6 6 6 6 6 6 | 6 6 6 6 6 6 6 6 6 6 | 6 6 6 6 6 6 6 6 6 6 |
+| 5 5 5 5 5 5 5 5 5 5 | 5 5 5 5 5 5 5 5 5 5 | 5 5 5 5 5 5 5 5 5 5 |
+| 4 4 4 4 4 4 4 4 4 4 | 4 4 4 4 4 4 4 4 4 4 | 4 4 4 4 4 4 4 4 4 4 |
+| 3 3 3 3 3 3 3 3 3 3 | 3 3 3 3 3 3 3 3 3 3 | 3 3 3 3 3 3 3 3 3 3 |
+| 3 2 2 2 2 2 2 2 2 2 | 3 2 2 2 2 2 2 2 2 2 | 3 2 2 2 2 2 2 2 2 2 |
+| 2 1 1 1 1 1 1 1 1 1 | 2 1 1 1 1 1 1 1 1 1 | 2 1 1 1 1 1 1 1 1 1 |
+| 1 0 0 0 0 0 0 0 0 0 | 1 0 0 0 0 0 0 0 0 0 | 1 0 0 0 0 0 0 0 0 0 |
+Select program:
+1: 1.AP/Overtime - Handles overtime calculations.
+2: 1.SD/Datatypes - Handles various data types.
+3: 2.AP/Overtime2 - Handles overtime calculations.
+4: 2.AP/Overtime2plus - Handles overtime calculations (alt implement).
+5: 2.SD/Sorting - Demonstrate sorting algorithms.
+0: Exit
+| -- originalData --- |
+| 5 3 8 3 9 1 4 7 3 6 |
+| 2 5 8 6 7 2 4 1 9 0 |
+| 3 5 7 4 2 6 8 1 9 0 |
+| 4 5 6 3 2 7 8 1 0 9 |
+| 6 3 2 1 5 4 7 8 9 0 |
+| 3 4 5 6 7 8 9 1 2 0 |
+| 5 3 7 2 4 6 1 8 0 9 |
+| 2 4 6 8 0 1 3 5 7 9 |
+| 6 2 4 8 1 3 5 7 9 0 |
+| 5 3 1 7 2 4 6 0 9 8 |
+
+Arrays.sort Performance:
+Time: 212846 nanoseconds
+Memory: 2648 bytes
+
+MergeSort Performance:
+Time: 45828 nanoseconds
+Memory: 10792 bytes
+
+CountingSort Performance:
+Time: 41685 nanoseconds
+Memory: 2680 bytes
+| --- sortedData ---- | -- mergeSortData -- | countingSortData -- |
+| 9 9 9 9 9 9 9 9 9 9 | 9 9 9 9 9 9 9 9 9 9 | 9 9 9 9 9 9 9 9 9 9 |
+| 8 8 8 8 8 8 8 8 8 8 | 8 8 8 8 8 8 8 8 8 8 | 8 8 8 8 8 8 8 8 8 8 |
+| 7 7 7 7 7 7 7 7 7 7 | 7 7 7 7 7 7 7 7 7 7 | 7 7 7 7 7 7 7 7 7 7 |
+| 6 6 6 6 6 6 6 6 6 6 | 6 6 6 6 6 6 6 6 6 6 | 6 6 6 6 6 6 6 6 6 6 |
+| 5 5 5 5 5 5 5 5 5 5 | 5 5 5 5 5 5 5 5 5 5 | 5 5 5 5 5 5 5 5 5 5 |
+| 4 4 4 4 4 4 4 4 4 4 | 4 4 4 4 4 4 4 4 4 4 | 4 4 4 4 4 4 4 4 4 4 |
+| 3 3 3 3 3 3 3 3 3 3 | 3 3 3 3 3 3 3 3 3 3 | 3 3 3 3 3 3 3 3 3 3 |
+| 3 2 2 2 2 2 2 2 2 2 | 3 2 2 2 2 2 2 2 2 2 | 3 2 2 2 2 2 2 2 2 2 |
+| 2 1 1 1 1 1 1 1 1 1 | 2 1 1 1 1 1 1 1 1 1 | 2 1 1 1 1 1 1 1 1 1 |
+| 1 0 0 0 0 0 0 0 0 0 | 1 0 0 0 0 0 0 0 0 0 | 1 0 0 0 0 0 0 0 0 0 |
+Select program:
+1: 1.AP/Overtime - Handles overtime calculations.
+2: 1.SD/Datatypes - Handles various data types.
+3: 2.AP/Overtime2 - Handles overtime calculations.
+4: 2.AP/Overtime2plus - Handles overtime calculations (alt implement).
+5: 2.SD/Sorting - Demonstrate sorting algorithms.
+0: Exit
+| -- originalData --- |
+| 5 3 8 3 9 1 4 7 3 6 |
+| 2 5 8 6 7 2 4 1 9 0 |
+| 3 5 7 4 2 6 8 1 9 0 |
+| 4 5 6 3 2 7 8 1 0 9 |
+| 6 3 2 1 5 4 7 8 9 0 |
+| 3 4 5 6 7 8 9 1 2 0 |
+| 5 3 7 2 4 6 1 8 0 9 |
+| 2 4 6 8 0 1 3 5 7 9 |
+| 6 2 4 8 1 3 5 7 9 0 |
+| 5 3 1 7 2 4 6 0 9 8 |
+
+Arrays.sort Performance:
+Time: 79523 nanoseconds
+Memory: 2648 bytes
+
+MergeSort Performance:
+Time: 55083 nanoseconds
+Memory: 10792 bytes
+
+CountingSort Performance:
+Time: 31435 nanoseconds
+Memory: 2680 bytes
+| --- sortedData ---- | -- mergeSortData -- | countingSortData -- |
+| 9 9 9 9 9 9 9 9 9 9 | 9 9 9 9 9 9 9 9 9 9 | 9 9 9 9 9 9 9 9 9 9 |
+| 8 8 8 8 8 8 8 8 8 8 | 8 8 8 8 8 8 8 8 8 8 | 8 8 8 8 8 8 8 8 8 8 |
+| 7 7 7 7 7 7 7 7 7 7 | 7 7 7 7 7 7 7 7 7 7 | 7 7 7 7 7 7 7 7 7 7 |
+| 6 6 6 6 6 6 6 6 6 6 | 6 6 6 6 6 6 6 6 6 6 | 6 6 6 6 6 6 6 6 6 6 |
+| 5 5 5 5 5 5 5 5 5 5 | 5 5 5 5 5 5 5 5 5 5 | 5 5 5 5 5 5 5 5 5 5 |
+| 4 4 4 4 4 4 4 4 4 4 | 4 4 4 4 4 4 4 4 4 4 | 4 4 4 4 4 4 4 4 4 4 |
+| 3 3 3 3 3 3 3 3 3 3 | 3 3 3 3 3 3 3 3 3 3 | 3 3 3 3 3 3 3 3 3 3 |
+| 3 2 2 2 2 2 2 2 2 2 | 3 2 2 2 2 2 2 2 2 2 | 3 2 2 2 2 2 2 2 2 2 |
+| 2 1 1 1 1 1 1 1 1 1 | 2 1 1 1 1 1 1 1 1 1 | 2 1 1 1 1 1 1 1 1 1 |
+| 1 0 0 0 0 0 0 0 0 0 | 1 0 0 0 0 0 0 0 0 0 | 1 0 0 0 0 0 0 0 0 0 |
+Select program:
+1: 1.AP/Overtime - Handles overtime calculations.
+2: 1.SD/Datatypes - Handles various data types.
+3: 2.AP/Overtime2 - Handles overtime calculations.
+4: 2.AP/Overtime2plus - Handles overtime calculations (alt implement).
+5: 2.SD/Sorting - Demonstrate sorting algorithms.
+0: Exit
+| -- originalData --- |
+| 5 3 8 3 9 1 4 7 3 6 |
+| 2 5 8 6 7 2 4 1 9 0 |
+| 3 5 7 4 2 6 8 1 9 0 |
+| 4 5 6 3 2 7 8 1 0 9 |
+| 6 3 2 1 5 4 7 8 9 0 |
+| 3 4 5 6 7 8 9 1 2 0 |
+| 5 3 7 2 4 6 1 8 0 9 |
+| 2 4 6 8 0 1 3 5 7 9 |
+| 6 2 4 8 1 3 5 7 9 0 |
+| 5 3 1 7 2 4 6 0 9 8 |
+
+Arrays.sort Performance:
+Time: 224918 nanoseconds
+Memory: 2648 bytes
+
+MergeSort Performance:
+Time: 50787 nanoseconds
+Memory: 10792 bytes
+
+CountingSort Performance:
+Time: 37565 nanoseconds
+Memory: 2680 bytes
+| --- sortedData ---- | -- mergeSortData -- | countingSortData -- |
+| 9 9 9 9 9 9 9 9 9 9 | 9 9 9 9 9 9 9 9 9 9 | 9 9 9 9 9 9 9 9 9 9 |
+| 8 8 8 8 8 8 8 8 8 8 | 8 8 8 8 8 8 8 8 8 8 | 8 8 8 8 8 8 8 8 8 8 |
+| 7 7 7 7 7 7 7 7 7 7 | 7 7 7 7 7 7 7 7 7 7 | 7 7 7 7 7 7 7 7 7 7 |
+| 6 6 6 6 6 6 6 6 6 6 | 6 6 6 6 6 6 6 6 6 6 | 6 6 6 6 6 6 6 6 6 6 |
+| 5 5 5 5 5 5 5 5 5 5 | 5 5 5 5 5 5 5 5 5 5 | 5 5 5 5 5 5 5 5 5 5 |
+| 4 4 4 4 4 4 4 4 4 4 | 4 4 4 4 4 4 4 4 4 4 | 4 4 4 4 4 4 4 4 4 4 |
+| 3 3 3 3 3 3 3 3 3 3 | 3 3 3 3 3 3 3 3 3 3 | 3 3 3 3 3 3 3 3 3 3 |
+| 3 2 2 2 2 2 2 2 2 2 | 3 2 2 2 2 2 2 2 2 2 | 3 2 2 2 2 2 2 2 2 2 |
+| 2 1 1 1 1 1 1 1 1 1 | 2 1 1 1 1 1 1 1 1 1 | 2 1 1 1 1 1 1 1 1 1 |
+| 1 0 0 0 0 0 0 0 0 0 | 1 0 0 0 0 0 0 0 0 0 | 1 0 0 0 0 0 0 0 0 0 |
+Select program:
+1: 1.AP/Overtime - Handles overtime calculations.
+2: 1.SD/Datatypes - Handles various data types.
+3: 2.AP/Overtime2 - Handles overtime calculations.
+4: 2.AP/Overtime2plus - Handles overtime calculations (alt implement).
+5: 2.SD/Sorting - Demonstrate sorting algorithms.
+0: Exit

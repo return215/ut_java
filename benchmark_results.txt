@@ -1,0 +1,200 @@
+1
+Arrays.sort Performance:
+Time: 9912328 nanoseconds
+Memory: 587224 bytes
+MergeSort Performance:
+Time: 1514471 nanoseconds
+Memory: 83904 bytes
+CountingSort Performance:
+Time: 1323639 nanoseconds
+Memory: 22968 bytes
+2
+Arrays.sort Performance:
+Time: 294229 nanoseconds
+Memory: 15336 bytes
+MergeSort Performance:
+Time: 134042 nanoseconds
+Memory: 10064 bytes
+CountingSort Performance:
+Time: 30629 nanoseconds
+Memory: 6584 bytes
+3
+Arrays.sort Performance:
+Time: 350405 nanoseconds
+Memory: 4648 bytes
+MergeSort Performance:
+Time: 165247 nanoseconds
+Memory: 9128 bytes
+CountingSort Performance:
+Time: 30681 nanoseconds
+Memory: 2680 bytes
+4
+Arrays.sort Performance:
+Time: 70885 nanoseconds
+Memory: 2648 bytes
+MergeSort Performance:
+Time: 596252 nanoseconds
+Memory: 10792 bytes
+CountingSort Performance:
+Time: 108973 nanoseconds
+Memory: 2680 bytes
+5
+Arrays.sort Performance:
+Time: 212405 nanoseconds
+Memory: 2648 bytes
+MergeSort Performance:
+Time: 71925 nanoseconds
+Memory: 10792 bytes
+CountingSort Performance:
+Time: 104164 nanoseconds
+Memory: 2680 bytes
+6
+Arrays.sort Performance:
+Time: 298746 nanoseconds
+Memory: 2648 bytes
+MergeSort Performance:
+Time: 48634 nanoseconds
+Memory: 10792 bytes
+CountingSort Performance:
+Time: 104033 nanoseconds
+Memory: 2680 bytes
+7
+Arrays.sort Performance:
+Time: 224776 nanoseconds
+Memory: 2648 bytes
+MergeSort Performance:
+Time: 33839 nanoseconds
+Memory: 10792 bytes
+CountingSort Performance:
+Time: 100226 nanoseconds
+Memory: 2680 bytes
+8
+Arrays.sort Performance:
+Time: 214648 nanoseconds
+Memory: 2648 bytes
+MergeSort Performance:
+Time: 51792 nanoseconds
+Memory: 10792 bytes
+CountingSort Performance:
+Time: 44909 nanoseconds
+Memory: 2680 bytes
+9
+Arrays.sort Performance:
+Time: 63537 nanoseconds
+Memory: 2648 bytes
+MergeSort Performance:
+Time: 32642 nanoseconds
+Memory: 10792 bytes
+CountingSort Performance:
+Time: 30158 nanoseconds
+Memory: 2680 bytes
+10
+Arrays.sort Performance:
+Time: 117348 nanoseconds
+Memory: 2648 bytes
+MergeSort Performance:
+Time: 59139 nanoseconds
+Memory: 10792 bytes
+CountingSort Performance:
+Time: 46064 nanoseconds
+Memory: 2680 bytes
+11
+Arrays.sort Performance:
+Time: 184840 nanoseconds
+Memory: 2648 bytes
+MergeSort Performance:
+Time: 182019 nanoseconds
+Memory: 10792 bytes
+CountingSort Performance:
+Time: 31673 nanoseconds
+Memory: 2680 bytes
+12
+Arrays.sort Performance:
+Time: 226702 nanoseconds
+Memory: 2648 bytes
+MergeSort Performance:
+Time: 48743 nanoseconds
+Memory: 10792 bytes
+CountingSort Performance:
+Time: 32264 nanoseconds
+Memory: 2680 bytes
+13
+Arrays.sort Performance:
+Time: 75158 nanoseconds
+Memory: 2648 bytes
+MergeSort Performance:
+Time: 57621 nanoseconds
+Memory: 10792 bytes
+CountingSort Performance:
+Time: 38417 nanoseconds
+Memory: 2680 bytes
+14
+Arrays.sort Performance:
+Time: 66087 nanoseconds
+Memory: 2648 bytes
+MergeSort Performance:
+Time: 51346 nanoseconds
+Memory: 10792 bytes
+CountingSort Performance:
+Time: 54322 nanoseconds
+Memory: 2680 bytes
+15
+Arrays.sort Performance:
+Time: 183321 nanoseconds
+Memory: 2648 bytes
+MergeSort Performance:
+Time: 40059 nanoseconds
+Memory: 10792 bytes
+CountingSort Performance:
+Time: 42364 nanoseconds
+Memory: 2680 bytes
+16
+Arrays.sort Performance:
+Time: 81974 nanoseconds
+Memory: 2648 bytes
+MergeSort Performance:
+Time: 95506 nanoseconds
+Memory: 10792 bytes
+CountingSort Performance:
+Time: 129478 nanoseconds
+Memory: 2680 bytes
+17
+Arrays.sort Performance:
+Time: 90338 nanoseconds
+Memory: 2648 bytes
+MergeSort Performance:
+Time: 49789 nanoseconds
+Memory: 10792 bytes
+CountingSort Performance:
+Time: 42858 nanoseconds
+Memory: 2680 bytes
+18
+Arrays.sort Performance:
+Time: 212846 nanoseconds
+Memory: 2648 bytes
+MergeSort Performance:
+Time: 45828 nanoseconds
+Memory: 10792 bytes
+CountingSort Performance:
+Time: 41685 nanoseconds
+Memory: 2680 bytes
+19
+Arrays.sort Performance:
+Time: 79523 nanoseconds
+Memory: 2648 bytes
+MergeSort Performance:
+Time: 55083 nanoseconds
+Memory: 10792 bytes
+CountingSort Performance:
+Time: 31435 nanoseconds
+Memory: 2680 bytes
+20
+Arrays.sort Performance:
+Time: 224918 nanoseconds
+Memory: 2648 bytes
+MergeSort Performance:
+Time: 50787 nanoseconds
+Memory: 10792 bytes
+CountingSort Performance:
+Time: 37565 nanoseconds
+Memory: 2680 bytes

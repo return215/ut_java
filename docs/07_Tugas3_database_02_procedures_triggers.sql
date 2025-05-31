@@ -1,0 +1,88 @@
+-- run as user with SUPER privileges, like root
+
+DELIMITER //
+CREATE DEFINER = 'nord'@'%' -- user yang membuat adalah 'nord'
+FUNCTION CekKetersediaanDokter (
+  id_dokter_f INT,
+  waktu_temu TIME
+) RETURNS BOOLEAN
+  DETERMINISTIC         -- sistem saya ada binary logging, jadi harus ada ini
+  SQL SECURITY INVOKER  -- gunakan izin dari yang memanggil fungsi
+BEGIN
+  DECLARE waktu_selesai TIME;
+  DECLARE waktu_mulai TIME;
+
+  SELECT waktu_kerja, waktu_kerja + INTERVAL 12 HOUR
+  INTO waktu_mulai, waktu_selesai
+  FROM dokter
+  WHERE id_dokter_f = id_dokter;
+
+  RETURN waktu_temu BETWEEN waktu_mulai AND (waktu_selesai - INTERVAL 1 SECOND);
+END //
+
+CREATE DEFINER = 'nord'@'%'
+PROCEDURE ProsesPasien (
+  IN id_pasien_p INT,
+  IN id_dokter_p INT,
+  IN id_admin_p INT,
+  IN resep_p TEXT,
+  IN waktu_temu DATETIME
+) NOT DETERMINISTIC
+  SQL SECURITY INVOKER
+BEGIN
+  DECLARE bisa_konsul BOOLEAN;
+  DECLARE EXIT HANDLER FOR SQLEXCEPTION
+  BEGIN
+    ROLLBACK; -- rollback changes on error
+    RESIGNAL; -- pass the exception again
+  END;
+
+  START TRANSACTION;
+
+  SELECT CekKetersediaanDokter(id_dokter_p, TIME(waktu_temu)) INTO bisa_konsul;
+
+  IF bisa_konsul < 0 THEN
+    -- error
+    SIGNAL SQLSTATE '45D00' SET
+      MESSAGE_TEXT = 'Dokter tidak tersedia pada waktu yang dipilih',
+      MYSQL_ERRNO = 2000;
+    -- akan rollback dan resignal
+  END IF;
+
+  -- dari ketiga ini ada yang bisa gagal kalau input salah,
+  -- ditangani oleh exit handler untuk rollback
+  INSERT INTO pasien_dokter (id_dokter, id_pasien, resep, waktu_periksa) VALUES
+    (id_dokter_p, id_pasien_p, resep_p, waktu_temu);
+  INSERT INTO dokter_admin (id_dokter, id_admin) VALUES
+    (id_dokter_p, id_admin_p);
+  INSERT INTO pendaftaran (id_pasien, id_admin) VALUES
+    (id_pasien_p, id_admin_p);
+
+  COMMIT;
+END //
+
+CREATE TRIGGER update_stok_obat
+BEFORE INSERT ON transaksi_obat_detail
+FOR EACH ROW
+BEGIN
+  UPDATE obat SET stok = stok - NEW.jumlah
+    WHERE id_obat = NEW.id_obat;
+END //
+
+CREATE TRIGGER update_total_transaksi_obat
+AFTER INSERT ON transaksi_obat_detail
+FOR EACH ROW
+BEGIN
+  UPDATE transaksi_obat_detail
+    SET total_harga = NEW.jumlah * NEW.harga
+    WHERE id_transaksi_detail = NEW.id_transaksi_detail;
+  UPDATE transaksi_obat
+    SET total_harga = (
+      SELECT SUM(total_harga)
+      FROM transaksi_obat_detail
+      WHERE id_transaksi = NEW.id_transaksi
+    )
+    WHERE id_transaksi = NEW.id_transaksi;
+END //
+
+DELIMITER ;

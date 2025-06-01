@@ -1,9 +1,8 @@
-delimiter //
 
-create definer = 'nord'@'%'
+create 
 procedure DemoProsesObat (
   in id_pasien_p int
-) non deterministic
+) not deterministic
   sql security invoker
 begin
   declare id_transaksi_b int;
@@ -22,19 +21,19 @@ begin
   -- add obat
   select harga into harga_obat from obat where id_obat = 30;
   INSERT INTO transaksi_obat_detail (id_transaksi, id_obat, jumlah, harga, total_harga) VALUES
-  (id_transaksi_b, 30, 2, harga_obat, 0); -- obat tetes mata kering
+  (id_transaksi_b, 30, 2, harga_obat, harga_obat * 2); -- obat tetes mata kering
 
   select harga into harga_obat from obat where id_obat = 19;
   INSERT INTO transaksi_obat_detail (id_transaksi, id_obat, jumlah, harga, total_harga) VALUES
-  (id_transaksi_b, 19, 3, harga_obat, 0); -- suplemen mata
+  (id_transaksi_b, 19, 3, harga_obat, harga_obat * 3); -- suplemen mata
 
   commit;
-end //
+end ;
 
-create definer = 'nord'@'%'
+create 
 procedure DemoProsesObatGagal (
   in id_pasien_p int
-) non deterministic
+) not deterministic
   sql security invoker
 begin
   declare id_transaksi_b int;
@@ -53,16 +52,15 @@ begin
   -- add obat
   select harga into harga_obat from obat where id_obat = 30;
   INSERT INTO transaksi_obat_detail (id_transaksi, id_obat, jumlah, harga, total_harga) VALUES
-  (id_transaksi_b, 30, 2, harga_obat, 0); -- obat tetes mata kering
+  (id_transaksi_b, 30, 2, harga_obat, harga_obat * 2); -- obat tetes mata kering
 
   select harga into harga_obat from obat where id_obat = 19;
   INSERT INTO transaksi_obat_detail (id_transaksi, id_obat, jumlah, harga, total_harga) VALUES
-  (id_transaksi_b, 19, 60, harga_obat, 0); -- suplemen mata
+  (id_transaksi_b, 19, 60, harga_obat, harga_obat * 60); -- suplemen mata
 
   commit;
-end //
+end ;
 
-delimiter ;
 
 -- using function
 select CekKetersediaanDokter(1, '20:00:00'); -- returns 1

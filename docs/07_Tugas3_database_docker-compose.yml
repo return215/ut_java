@@ -1,0 +1,43 @@
+version: '3.8'
+services:
+  mysql-master:
+    image: mysql:8.0
+    container_name: mysql-master
+    command: --server-id=1 --log-bin=mysql-bin --binlog_do_db=tugas3
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_REPLICATION_USER: repl_user
+      MYSQL_REPLICATION_PASSWORD: repl_password
+      MYSQL_DATABASE: tugas3
+    volumes:
+      - master_data:/var/lib/mysql
+    ports:
+      - "14003:3306"
+      - "14103:33060"
+
+  mysql-slave:
+    image: mysql:8.0
+    container_name: mysql-slave
+    command: --server-id=2 --relay-log=mysql-relay-bin --log-slave-updates
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: tugas3
+    volumes:
+      - slave_data:/var/lib/mysql
+    ports:
+      - "14004:3306"
+      - "14104:33060"
+    depends_on:
+      - mysql-master
+
+  adminer:
+    image: adminer
+    ports:
+      - "18003:8080"
+    depends_on:
+      - mysql-master
+      - mysql-slave
+
+volumes:
+  master_data:
+  slave_data:

@@ -54,7 +54,6 @@ DROP COLUMN waktu_periksa;
 -- Ubah prosedur ProsesPasien agar menggunakan id_konsultasi
 DROP PROCEDURE IF EXISTS ProsesPasien; -- Hapus prosedur lama jika ada
 
-DELIMITER //
 CREATE PROCEDURE ProsesPasien (
     IN id_pasien_p INT,
     IN id_dokter_p INT,
@@ -77,7 +76,7 @@ BEGIN
 
     SELECT CekKetersediaanDokter(id_dokter_p, TIME(waktu_temu)) INTO bisa_konsul;
 
-    IF bisa_konsul < 0 THEN
+    IF bisa_konsul = 0 THEN
         -- Error: dokter tidak tersedia
         SIGNAL SQLSTATE '45D00' SET
             MESSAGE_TEXT = 'Dokter tidak tersedia pada waktu yang dipilih',
@@ -95,8 +94,7 @@ BEGIN
         (id_pasien_p, id_admin_p, v_id_konsultasi);
 
     COMMIT;
-END //
-DELIMITER ;
+END;
 
 ALTER TABLE pasien_dokter MODIFY COLUMN id_konsultasi INT NOT NULL;
 ALTER TABLE dokter_admin MODIFY COLUMN id_konsultasi INT NOT NULL;

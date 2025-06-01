@@ -1,8 +1,5 @@
--- run as user with SUPER privileges, like root
 
-DELIMITER //
-CREATE DEFINER = 'nord'@'%' -- user yang membuat adalah 'nord'
-FUNCTION CekKetersediaanDokter (
+CREATE FUNCTION CekKetersediaanDokter (
   id_dokter_f INT,
   waktu_temu TIME
 ) RETURNS BOOLEAN
@@ -18,7 +15,7 @@ BEGIN
   WHERE id_dokter_f = id_dokter;
 
   RETURN waktu_temu BETWEEN waktu_mulai AND (waktu_selesai - INTERVAL 1 SECOND);
-END //
+END;
 
 CREATE TRIGGER update_stok_obat
 BEFORE INSERT ON transaksi_obat_detail
@@ -26,15 +23,12 @@ FOR EACH ROW
 BEGIN
   UPDATE obat SET stok = stok - NEW.jumlah
     WHERE id_obat = NEW.id_obat;
-END //
+END;
 
 CREATE TRIGGER update_total_transaksi_obat
 AFTER INSERT ON transaksi_obat_detail
 FOR EACH ROW
 BEGIN
-  UPDATE transaksi_obat_detail
-    SET total_harga = NEW.jumlah * NEW.harga
-    WHERE id_transaksi_detail = NEW.id_transaksi_detail;
   UPDATE transaksi_obat
     SET total_harga = (
       SELECT SUM(total_harga)
@@ -42,6 +36,5 @@ BEGIN
       WHERE id_transaksi = NEW.id_transaksi
     )
     WHERE id_transaksi = NEW.id_transaksi;
-END //
+END;
 
-DELIMITER ;

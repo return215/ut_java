@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Overtime3 {
     Scanner scanner;
 
-    public Overtime2plus(Scanner scanner) {
+    public Overtime3(Scanner scanner) {
         this.scanner = scanner;
 
         // Define variables
@@ -43,14 +43,14 @@ public class Overtime3 {
         // untuk mencegah overflow/underflow (ArrayIndexOutOfBoundsException)
         if (jamLembur_index >= gajiLemburList.length)
           jamLembur_index = gajiLemburList.length - 1;
-        else of (jamLembur_index < 0)
+        else if (jamLembur_index < 0)
           jamLembur_index = 0;
 
         // Determine gaji golongan
         gajiGolongan = gajiGolonganList[golongan_index];
 
         // Determine gaji lembur
-        gajiLembur = gajiLemburList[jamLembur_index];
+        gajiLembur = gajiGolongan * gajiLemburList[jamLembur_index];
 
         // Calculate gaji akhir
         gajiAkhir = gajiGolongan + gajiLembur;

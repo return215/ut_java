@@ -5,6 +5,8 @@ import xyz.return215.ut_java.tugas1.strukdat.Datatypes;
 import xyz.return215.ut_java.tugas2.alpro.Overtime2;
 import xyz.return215.ut_java.tugas2.alpro.Overtime2plus;
 import xyz.return215.ut_java.tugas2.strukdat.Sorting;
+import xyz.return215.ut_java.tugas3.alpro.Overtime3;
+import xyz.return215.ut_java.tugas3.strukdat.GraphTraverse;
 
 import java.util.Scanner;
 
@@ -13,8 +15,24 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         boolean stop = false;
 
-        String[] programs = {"1.AP/Overtime", "1.SD/Datatypes", "2.AP/Overtime2", "2.AP/Overtime2plus", "2.SD/Sorting",};
-        String[] descriptions = {"Handles overtime calculations.", "Handles various data types.", "Handles overtime calculations.", "Handles overtime calculations (alt implement).", "Demonstrate sorting algorithms.",};
+        String[] programs = {
+            "1.AP/Overtime",
+            "1.SD/Datatypes",
+            "2.AP/Overtime2",
+            "2.AP/Overtime2plus",
+            "2.SD/Sorting",
+            "3.AP/Overtime3",
+            "3.SD/GraphTraversal",
+        };
+        String[] descriptions = {
+            "Handles overtime calculations (proof of concept).",
+            "Handles various data types.",
+            "Handles overtime calculations.",
+            "Handles overtime calculations (alt implement).",
+            "Demonstrate sorting algorithms.",
+            "Handles overtime calculations (with arrays).",
+            "Demonstrate graph traversal algorithms.",
+        };
 
         System.out.println("""
             Nama : Muhammad Hidayat
@@ -44,19 +62,25 @@ public class Main {
                     stop = true;
                     break;
                 case 1:
-                    Overtime overtimeProgram = new Overtime(scanner);
+                    new Overtime(scanner);
                     break;
                 case 2:
-                    Datatypes datatypesProgram = new Datatypes(scanner);
+                    new Datatypes(scanner);
                     break;
                 case 3:
-                    Overtime2 overtime2Program = new Overtime2(scanner);
+                    new Overtime2(scanner);
                     break;
                 case 4:
-                    Overtime2plus overtime2PlusProgram = new Overtime2plus(scanner);
+                    new Overtime2plus(scanner);
                     break;
                 case 5:
-                    Sorting sortingProgram = new Sorting(scanner);
+                    new Sorting(scanner);
+                    break;
+                case 6:
+                    new Overtime3(scanner);
+                    break;
+                case 7:
+                    new GraphTraverse(scanner);
                     break;
                 default:
                     System.out.println("Invalid choice, please try again.");

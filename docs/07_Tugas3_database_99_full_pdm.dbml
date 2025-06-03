@@ -1,0 +1,96 @@
+Table "dokter" {
+  "id_dokter" INT [pk, increment]
+  "nama_dokter" VARCHAR(150) [not null]
+  "tanggal_lahir" DATE [not null]
+  "alamat_dokter" TEXT [not null]
+  "spesialis" VARCHAR(100) [not null]
+  "waktu_kerja" TIME [not null]
+  "no_hp" VARCHAR(15) [not null]
+}
+
+Table "pasien" {
+  "id_pasien" INT [pk, increment]
+  "nama_pasien" VARCHAR(150) [not null]
+  "jenis_kelamin" CHAR(1) [not null]
+  "alamat_pasien" TEXT [not null]
+}
+
+Table "administrator" {
+  "id_admin" INT [pk, increment]
+  "nama_admin" VARCHAR(150) [not null]
+  "waktu_jaga" TIME [not null]
+}
+
+Table "konsultasi_event" {
+  "id_konsultasi" INT [pk, increment]
+  "waktu_konsultasi" DATETIME [not null]
+}
+
+Table "pasien_dokter" {
+  "id" INT [pk, increment]
+  "id_dokter" INT [not null]
+  "id_pasien" INT [not null]
+  "resep" TEXT
+  "id_konsultasi" INT [not null]
+}
+
+Table "dokter_admin" {
+  "id_data" INT [pk, increment]
+  "id_dokter" INT [not null]
+  "id_admin" INT [not null]
+  "id_konsultasi" INT [not null]
+}
+
+Table "pendaftaran" {
+  "id_daftar" INT [pk, increment]
+  "id_pasien" INT [not null]
+  "id_admin" INT [not null]
+  "id_konsultasi" INT [not null]
+}
+
+Table "obat" {
+  "id_obat" INT [pk, increment]
+  "kode_obat" VARCHAR(5)
+  "nama_obat" VARCHAR(30)
+  "harga" INT
+  "stok" INT
+}
+
+Table "transaksi_obat" {
+  "id_transaksi" INT [pk, increment]
+  "id_pasien" INT
+  "total_harga" INT
+}
+
+Table "transaksi_obat_detail" {
+  "id_transaksi_detail" INT [pk, increment]
+  "id_transaksi" INT
+  "id_obat" INT
+  "jumlah" INT
+  "harga" INT
+  "total_harga" INT
+}
+
+Ref "fk_dokter_pasien":"dokter"."id_dokter" < "pasien_dokter"."id_dokter" [update: cascade, delete: cascade]
+
+Ref "fk_pasien_dokter":"pasien"."id_pasien" < "pasien_dokter"."id_pasien" [update: cascade, delete: cascade]
+
+Ref "fk_pasien_dokter_konsultasi":"konsultasi_event"."id_konsultasi" < "pasien_dokter"."id_konsultasi" [update: cascade, delete: cascade]
+
+Ref "fk_dokter_admin":"dokter"."id_dokter" < "dokter_admin"."id_dokter" [update: cascade, delete: cascade]
+
+Ref "fk_admin_dokter":"administrator"."id_admin" < "dokter_admin"."id_admin" [update: cascade, delete: cascade]
+
+Ref "fk_dokter_admin_konsultasi":"konsultasi_event"."id_konsultasi" < "dokter_admin"."id_konsultasi" [update: cascade, delete: cascade]
+
+Ref "fk_pasien_admin":"pasien"."id_pasien" < "pendaftaran"."id_pasien" [update: cascade, delete: cascade]
+
+Ref "fk_admin_pasien":"administrator"."id_admin" < "pendaftaran"."id_admin" [update: cascade, delete: cascade]
+
+Ref "fk_pasien_admin_konsultasi":"konsultasi_event"."id_konsultasi" < "pendaftaran"."id_konsultasi" [update: cascade, delete: cascade]
+
+Ref "fk_pasien_obat":"pasien"."id_pasien" < "transaksi_obat"."id_pasien" [update: cascade, delete: cascade]
+
+Ref "fk_obat_transaksi":"obat"."id_obat" < "transaksi_obat_detail"."id_obat" [update: cascade, delete: cascade]
+
+Ref "fk_transaksi_detail":"transaksi_obat"."id_transaksi" < "transaksi_obat_detail"."id_transaksi" [update: cascade, delete: cascade]

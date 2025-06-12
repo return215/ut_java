@@ -15,14 +15,12 @@ public class Overtime2 {
         double gajiGolongan = 0;
         double gajiLembur = 0;
         double gajiAkhir;
+        // Output gaji akhir
+        DecimalFormat df = new DecimalFormat("#,##0");
 
         // Input golongan
         System.out.print("Masukkan golongan (A/B/C): ");
         golongan = scanner.nextLine();
-
-        // Input jam lembur
-        System.out.print("Masukkan jam lembur: ");
-        jamLembur = scanner.nextInt();
 
         // Determine gaji golongan
         if (golongan.equals("A")) {
@@ -36,6 +34,12 @@ public class Overtime2 {
             return;
         }
 
+        System.out.println("Gaji golongan: " + df.format(gajiGolongan));
+
+        // Input jam lembur
+        System.out.print("Masukkan jam lembur: ");
+        jamLembur = scanner.nextInt();
+        
         // Determine gaji lembur
         if (jamLembur <= 0) {
             gajiLembur = 0;
@@ -51,13 +55,15 @@ public class Overtime2 {
             gajiLembur = gajiGolongan * 0.38;
         }
 
+        System.out.println("Gaji lembur: " + df.format(gajiLembur));
+
         // Calculate gaji akhir
         gajiAkhir = gajiGolongan + gajiLembur;
 
-        // Output gaji akhir
-        DecimalFormat df = new DecimalFormat("#,##0");
-        System.out.println("Gaji golongan: " + df.format(gajiGolongan));
-        System.out.println("Gaji lembur: " + df.format(gajiLembur));
+
         System.out.println("Gaji akhir: " + df.format(gajiAkhir));
+    }
+    public static void main(String[] args) {
+        new Overtime2(new Scanner(System.in));
     }
 }

@@ -17,10 +17,11 @@ public class Overtime3 {
         double gajiGolongan = 0;
         double gajiLembur = 0;
         double gajiAkhir;
+        DecimalFormat df = new DecimalFormat("#,##0");
 
         // Define arrays
         int[] gajiGolonganList = {5000000, 6500000, 9500000};
-        double[] gajiLemburList = {0.00, 0.30, 0.32, 0.34, 0.36, 0.38};
+        int[] gajiLemburList = {0, 30, 32, 34, 36, 38};
 
         // Input golongan
         System.out.print("Masukkan golongan (A/B/C): ");
@@ -34,6 +35,10 @@ public class Overtime3 {
             return;
         }
 
+        // Determine gaji golongan
+        gajiGolongan = gajiGolonganList[golongan_index];
+        System.out.println("Gaji golongan: " + df.format(gajiGolongan));
+
         // Input jam lembur
         System.out.print("Masukkan jam lembur: ");
         jamLembur = scanner.nextDouble();
@@ -46,19 +51,17 @@ public class Overtime3 {
         else if (jamLembur_index < 0)
           jamLembur_index = 0;
 
-        // Determine gaji golongan
-        gajiGolongan = gajiGolonganList[golongan_index];
-
         // Determine gaji lembur
-        gajiLembur = gajiGolongan * gajiLemburList[jamLembur_index];
+        // gaji pokok sudah double, tetap otomatis double
+        gajiLembur = gajiGolongan / 100 * gajiLemburList[jamLembur_index];
+        System.out.println("Gaji lembur: " + df.format(gajiLembur));
 
         // Calculate gaji akhir
         gajiAkhir = gajiGolongan + gajiLembur;
-
-        // Output gaji akhir
-        DecimalFormat df = new DecimalFormat("#,##0");
-        System.out.println("Gaji golongan: " + df.format(gajiGolongan));
-        System.out.println("Gaji lembur: " + df.format(gajiLembur));
         System.out.println("Gaji akhir: " + df.format(gajiAkhir));
+    }
+
+    public static void main(String[] args) {
+        new Overtime3(new Scanner(System.in));
     }
 }

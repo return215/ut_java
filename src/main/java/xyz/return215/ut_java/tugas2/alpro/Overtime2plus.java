@@ -15,16 +15,14 @@ public class Overtime2plus {
         double gajiGolongan = 0;
         double gajiLembur = 0;
         double gajiAkhir;
+        // Output gaji akhir
+        DecimalFormat df = new DecimalFormat("#,##0");
 
         // Input golongan
         System.out.print("Masukkan golongan (A/B/C): ");
         golongan = scanner.nextLine().toUpperCase().charAt(0);
 
-        // Input jam lembur
-        System.out.print("Masukkan jam lembur: ");
-        jamLembur = scanner.nextDouble();
-
-        // Determine gaji golongan
+     // Determine gaji golongan
         if (golongan == ('A')) {
             gajiGolongan = 5000000;
         } else if (golongan == ('B')) {
@@ -35,7 +33,12 @@ public class Overtime2plus {
             System.out.println("Golongan tidak valid.");
             return;
         }
-
+        System.out.println("Gaji golongan: " + df.format(gajiGolongan));
+        
+        // Input jam lembur
+        System.out.print("Masukkan jam lembur: ");
+        jamLembur = scanner.nextDouble();
+        
         // Determine gaji lembur
         if (jamLembur < 1) {
             gajiLembur = 0;
@@ -51,13 +54,14 @@ public class Overtime2plus {
             gajiLembur = gajiGolongan * 0.38;
         }
 
+        System.out.println("Gaji lembur: " + df.format(gajiLembur));
+
         // Calculate gaji akhir
         gajiAkhir = gajiGolongan + gajiLembur;
-
-        // Output gaji akhir
-        DecimalFormat df = new DecimalFormat("#,##0");
-        System.out.println("Gaji golongan: " + df.format(gajiGolongan));
-        System.out.println("Gaji lembur: " + df.format(gajiLembur));
         System.out.println("Gaji akhir: " + df.format(gajiAkhir));
+    }
+
+    public static void main(String[] args) {
+        new Overtime2plus(new Scanner(System.in));
     }
 }

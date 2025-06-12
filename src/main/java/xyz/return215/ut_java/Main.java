@@ -8,30 +8,54 @@ import xyz.return215.ut_java.tugas2.strukdat.Sorting;
 import xyz.return215.ut_java.tugas3.alpro.Overtime3;
 import xyz.return215.ut_java.tugas3.strukdat.GraphTraverse;
 
+import java.lang.reflect.Constructor;
 import java.util.Scanner;
+import java.util.function.Function;
 
 public class Main {
+    // MenuItem class to hold program information and instantiation logic
+    private static class MenuItem {
+        private final String title;
+        private final String description;
+        private final Function<Scanner, Object> constructor;
+
+        public <T> MenuItem(String title, String description, Class<T> clazz) {
+            this.title = title;
+            this.description = description;
+            this.constructor = scanner -> {
+                try {
+                    Constructor<T> constructor = clazz.getConstructor(Scanner.class);
+                    return constructor.newInstance(scanner);
+                } catch (Exception e) {
+                    System.err.println("Error instantiating " + clazz.getSimpleName() + ": " + e.getMessage());
+                    return null;
+                }
+            };
+        }
+
+        public void run(Scanner scanner) {
+            constructor.apply(scanner);
+        }
+
+        @Override
+        public String toString() {
+            return title + " - " + description;
+        }
+    }
+
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        boolean stop = false;
 
-        String[] programs = {
-            "1.AP/Overtime",
-            "1.SD/Datatypes",
-            "2.AP/Overtime2",
-            "2.AP/Overtime2plus",
-            "2.SD/Sorting",
-            "3.AP/Overtime3",
-            "3.SD/GraphTraversal",
-        };
-        String[] descriptions = {
-            "Handles overtime calculations (proof of concept).",
-            "Handles various data types.",
-            "Handles overtime calculations.",
-            "Handles overtime calculations (alt implement).",
-            "Demonstrate sorting algorithms.",
-            "Handles overtime calculations (with arrays).",
-            "Demonstrate graph traversal algorithms.",
+        // Array of menu items
+        MenuItem[] menuItems = {
+            new MenuItem("1.AP/Overtime", "Handles overtime calculations (proof of concept).", Overtime.class),
+            new MenuItem("1.SD/Datatypes", "Handles various data types.", Datatypes.class),
+            new MenuItem("2.AP/Overtime2", "Handles overtime calculations.", Overtime2.class),
+            new MenuItem("2.AP/Overtime2plus", "Handles overtime calculations (alt implement).", Overtime2plus.class),
+            new MenuItem("2.SD/Sorting", "Demonstrate sorting algorithms.", Sorting.class),
+            new MenuItem("3.AP/Overtime3", "Handles overtime calculations (with arrays).", Overtime3.class),
+            new MenuItem("3.SD/GraphTraversal", "Demonstrate graph traversal algorithms.", GraphTraverse.class)
         };
 
         System.out.println("""
@@ -44,49 +68,49 @@ public class Main {
             - MSIM4206 Basis Data, Kelas 66
             """);
 
-        //TIP Start main loop
-
-        while (!stop) {
+        while (true) {
+            // Display menu
             System.out.println("Select program:");
-            for (int i = 0; i < programs.length; i++) {
-                System.out.println(i + 1 + ": " + programs[i] + " - " + descriptions[i]);
+            for (int i = 0; i < menuItems.length; i++) {
+                System.out.println((i + 1) + ". " + menuItems[i]);
             }
-            System.out.println("0: Exit");
-            int choice = scanner.nextInt();
-            // flush
-            scanner.nextLine();
+            System.out.println("0. Exit");
+            
+            // Get user input
+            System.out.print("Enter your choice (0-" + menuItems.length + "): ");
+            int choice;
+            try {
+                choice = Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Please enter a valid number.\n");
+                continue;
+            }
 
-            // INSTANTIATE TO RUN
-            switch (choice) {
-                case 0:
-                    stop = true;
-                    break;
-                case 1:
-                    new Overtime(scanner);
-                    break;
-                case 2:
-                    new Datatypes(scanner);
-                    break;
-                case 3:
-                    new Overtime2(scanner);
-                    break;
-                case 4:
-                    new Overtime2plus(scanner);
-                    break;
-                case 5:
-                    new Sorting(scanner);
-                    break;
-                case 6:
-                    new Overtime3(scanner);
-                    break;
-                case 7:
-                    new GraphTraverse(scanner);
-                    break;
-                default:
-                    System.out.println("Invalid choice, please try again.");
-                    break;
+            // Handle exit
+            if (choice == 0) {
+                break;
+            }
+
+            // Validate choice
+            if (choice < 0 || choice > menuItems.length) {
+                System.out.println("Invalid choice. Please try again.\n");
+                continue;
+            }
+
+
+            // Run selected program (adjusting for 0-based index)
+            System.out.println("\n--- Running " + menuItems[choice - 1].title + " ---");
+            menuItems[choice - 1].run(scanner);
+            System.out.println("\n--- Program finished. ---\n");
+
+
+            if (scanner.hasNextLine()) {
+                scanner.nextLine(); // flush
+                System.out.println("STDIN flushed.");
             }
         }
+
         scanner.close();
+        System.out.println("Goodbye!");
     }
 }
